@@ -7,13 +7,11 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-let hand1;
-let hand2;
-hand1 = prompt("Pick: Rock, Paper or Scissors");
-hand2 = prompt("Pick: Rock, Paper or Scissors");
-
-
 function rockPaperScissors(hand1, hand2) {
+  let hand1 = prompt("Pick: Rock, Paper or Scissors");
+  let hand2 = prompt("Pick: Rock, Paper or Scissors");
+  
+  
   if (hand1 === hand2){
     console.log("It's a tie!");
   } else if (hand1 === "Rock" && hand2 === "Scissors"){
@@ -29,9 +27,10 @@ function rockPaperScissors(hand1, hand2) {
   } else if (hand2 === "Paper" && hand1 === "Rock"){
     console.log("Congrats player 2, Paper won!");
   } 
-
-
 }
+
+rockPaperScissors(hand1, hand2);
+
 
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
