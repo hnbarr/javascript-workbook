@@ -1,45 +1,52 @@
 'use strict';
 
-const assert = require('assert');
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// const assert = require('assert');
+// const readline = require('readline');
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
+
+
+let hand1 = prompt("Pick: Rock, Paper or Scissors");
+let hand2 = prompt("Pick: Rock, Paper or Scissors");
 
 function rockPaperScissors(hand1, hand2) {
-  let hand1 = prompt("Pick: Rock, Paper or Scissors");
-  let hand2 = prompt("Pick: Rock, Paper or Scissors");
-  
-  
   if (hand1 === hand2){
     console.log("It's a tie!");
+    document.write("It's a tie!");
   } else if (hand1 === "Rock" && hand2 === "Scissors"){
     console.log("Congrats player 1, Rock won!");
+    document.write("Congrats player 1, Rock won!");
   } else if (hand1 === "Scissors" && hand2 === "Paper"){
     console.log("Congrats player 1, Scissors won!");
+    document.write("Congrats player 1, Scissors won!");
   } else if (hand1 === "Paper" && hand2 === "Rock"){
     console.log("Congrats player 1, Paper won!");
+    document.write("Congrats player 1, Paper won!");
   } else if (hand2 === "Rock" && hand1 === "Scissors"){
     console.log("Congrats player 2, Rock won!");
+    document.write("Congrats player 2, Rock won!");
   } else if (hand2 === "Scissors" && hand1 === "Paper"){
     console.log("Congrats player 2, Scissors won!");
+    document.write("Congrats player 2, Scissors won!");
   } else if (hand2 === "Paper" && hand1 === "Rock"){
     console.log("Congrats player 2, Paper won!");
+    document.write("Congrats player 2, Paper won!");
   } 
 }
 
 rockPaperScissors(hand1, hand2);
 
 
-function getPrompt() {
-  rl.question('hand1: ', (answer1) => {
-    rl.question('hand2: ', (answer2) => {
-      console.log( rockPaperScissors(answer1, answer2) );
-      getPrompt();
-    });
-  });
-}
+// function getPrompt() {
+//   rl.question('hand1: ', (answer1) => {
+//     rl.question('hand2: ', (answer2) => {
+//       console.log( rockPaperScissors(answer1, answer2) );
+//       getPrompt();
+//     });
+//   });
+// }
 
 // Tests
 
@@ -64,6 +71,6 @@ if (typeof describe === 'function') {
   });
 } else {
 
-  getPrompt();
+  // getPrompt();
 
 }
