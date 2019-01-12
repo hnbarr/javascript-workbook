@@ -1,42 +1,29 @@
 'use strict';
 
-// const assert = require('assert');
-// const readline = require('readline');
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
-
-
-let hand1 = prompt("Pick: Rock, Paper or Scissors");
-let hand2 = prompt("Pick: Rock, Paper or Scissors");
+const assert = require('assert');
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
 function rockPaperScissors(hand1, hand2) {
   if (hand1 === hand2){
-    console.log("It's a tie!");
-    document.write("It's a tie!");
+    return "It's a tie!"
   } else if (hand1 === "Rock" && hand2 === "Scissors"){
-    console.log("Congrats player 1, Rock won!");
-    document.write("Congrats player 1, Rock won!");
+    return "Congrats player 1, Rock won!"
   } else if (hand1 === "Scissors" && hand2 === "Paper"){
-    console.log("Congrats player 1, Scissors won!");
-    document.write("Congrats player 1, Scissors won!");
+    return "Congrats player 1, Scissors won!"
   } else if (hand1 === "Paper" && hand2 === "Rock"){
-    console.log("Congrats player 1, Paper won!");
-    document.write("Congrats player 1, Paper won!");
+    return "Congrats player 1, Paper won!"
   } else if (hand2 === "Rock" && hand1 === "Scissors"){
-    console.log("Congrats player 2, Rock won!");
-    document.write("Congrats player 2, Rock won!");
+    return "Congrats player 2, Rock won!"
   } else if (hand2 === "Scissors" && hand1 === "Paper"){
-    console.log("Congrats player 2, Scissors won!");
-    document.write("Congrats player 2, Scissors won!");
+    return "Congrats player 2, Scissors won!"
   } else if (hand2 === "Paper" && hand1 === "Rock"){
-    console.log("Congrats player 2, Paper won!");
-    document.write("Congrats player 2, Paper won!");
+    return "Congrats player 2, Paper won!"
   } 
 }
-
-rockPaperScissors(hand1, hand2);
 
 
 function getPrompt() {
@@ -71,6 +58,6 @@ if (typeof describe === 'function') {
   });
 } else {
 
-  // getPrompt();
+  getPrompt();
 
 }
