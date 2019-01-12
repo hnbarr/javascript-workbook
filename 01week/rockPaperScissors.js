@@ -7,24 +7,26 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-function rockPaperScissors(hand1, hand2) {
+function rockPaperScissors(hand1, hand2) { 
+  hand1 = hand1.toLowerCase().trim();
+  hand2 = hand2.toLowerCase().trim();
+
   if (hand1 === hand2){
     return "It's a tie!"
-  } else if (hand1 === "Rock" && hand2 === "Scissors"){
-    return "Congrats player 1, Rock won!"
-  } else if (hand1 === "Scissors" && hand2 === "Paper"){
-    return "Congrats player 1, Scissors won!"
-  } else if (hand1 === "Paper" && hand2 === "Rock"){
-    return "Congrats player 1, Paper won!"
-  } else if (hand2 === "Rock" && hand1 === "Scissors"){
-    return "Congrats player 2, Rock won!"
-  } else if (hand2 === "Scissors" && hand1 === "Paper"){
-    return "Congrats player 2, Scissors won!"
-  } else if (hand2 === "Paper" && hand1 === "Rock"){
-    return "Congrats player 2, Paper won!"
+  } else if (hand1 === "rock" && hand2 === "scissors"){
+    return "Hand one wins!"
+  } else if (hand1 === "scissors" && hand2 === "paper"){
+    return "Hand one wins!"
+  } else if (hand1 === "paper" && hand2 === "rock"){
+    return "Hand one wins!"
+  } else if (hand2 === "rock" && hand1 === "scissors"){
+    return "Hand two wins!"
+  } else if (hand2 === "scissors" && hand1 === "paper"){
+    return "Hand two wins!"
+  } else if (hand2 === "paper" && hand1 === "rock"){
+    return "Hand two wins!"
   } 
 }
-
 
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
