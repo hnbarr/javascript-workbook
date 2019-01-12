@@ -7,7 +7,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-function rockPaperScissors(hand1, hand2) { 
+function rockPaperScissors(hand1, hand2) {
   hand1 = hand1.toLowerCase().trim();
   hand2 = hand2.toLowerCase().trim();
 
