@@ -9,6 +9,7 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
+  answer = '';
   word = word.toLowerCase().trim();
 
   // starts with a vowel
@@ -28,7 +29,7 @@ function pigLatin(word) {
     answer = word.concat("yay");
     return answer;
   // every other word
-  } else for(i = 0; i < word.length; i++){
+  } else {
     answer = word.substring(1).concat(word[0] + "ay");
     return answer;
     // this is to take the first letter away, then add it to the end of the word plus "ay".
