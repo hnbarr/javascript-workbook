@@ -15,7 +15,7 @@ function pigLatin(word) {
   // to target consonant clusters
   let prefix = ["bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr", "nth", "sch", "scr", "shr", "spl", "spr", "squ", "str", "thr"];
   if (word.startsWith(prefix, 0)){
-    delete word.prefix;
+    word = delete word.prefix;
     answer = word.concat(word(prefix) + "ay");
     return answer;
     // the goal is to delete the prefix (2-3 letters) then add prefix to the end plus "ay".
