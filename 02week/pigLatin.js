@@ -60,6 +60,7 @@ if (typeof describe === 'function') {
     it('should attach "yay" if word begins with vowel', () => {
       assert.equal(pigLatin('egg'), 'eggyay');
       assert.equal(pigLatin('emission'), 'emissionyay');
+      assert.equal(pigLatin('apple'), 'appleyay');
     });
     it('should lowercase and trim word before translation', () => {
       assert.equal(pigLatin('HeLlO '), 'ellohay');
