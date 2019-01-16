@@ -9,20 +9,30 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
-  let answer = '';
-  let word = word.toLowerCase().trim();
+  word = word.toLowerCase().trim();
 
-  if (word.startsWith("a", "e", "i", "o", "u")){
+  // starts with a vowel
+  if (word.startsWith("a", 0)){
     answer = word.concat("yay");
     return answer;
-    // this is to keep the first letter of the word and then add "yay" to the end
-
+  } else if (word.startsWith("e", 0)){
+    answer = word.concat("yay");
+    return answer;
+  } else if (word.startsWith("i", 0)){
+    answer = word.concat("yay");
+    return answer;
+  } else if (word.startsWith("o", 0)){
+    answer = word.concat("yay");
+    return answer;
+  } else if (word.startsWith("u", 0)){
+    answer = word.concat("yay");
+    return answer;
+  // every other word
   } else for(i = 0; i < word.length; i++){
     answer = word.substring(1).concat(word[0] + "ay");
     return answer;
     // this is to take the first letter away, then add it to the end of the word plus "ay".
   }
-
 }
 
 
