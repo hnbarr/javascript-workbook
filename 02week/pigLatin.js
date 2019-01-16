@@ -9,8 +9,14 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
+  let answer = '';
+  let word = word.toLowerCase().trim();
 
-  // Your code here
+  for(i = 0; i < word.length; i++){
+    answer = word.substring(1).concat(word[0] + "ay");
+  }
+
+  console.log(answer)
 
 }
 
