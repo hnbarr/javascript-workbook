@@ -12,11 +12,16 @@ function pigLatin(word) {
   let answer = '';
   let word = word.toLowerCase().trim();
 
-  for(i = 0; i < word.length; i++){
-    answer = word.substring(1).concat(word[0] + "ay");
-  }
+  if (word.startsWith("a", "e", "i", "o", "u")){
+    answer = word.concat("yay");
+    return answer;
+    // this is to keep the first letter of the word and then add "yay" to the end
 
-  console.log(answer)
+  } else for(i = 0; i < word.length; i++){
+    answer = word.substring(1).concat(word[0] + "ay");
+    return answer;
+    // this is to take the first letter away, then add it to the end of the word plus "ay".
+  }
 
 }
 
