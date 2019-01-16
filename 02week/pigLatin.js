@@ -11,17 +11,34 @@ const rl = readline.createInterface({
 function pigLatin(word) {
   let answer = '';
   word = word.toLowerCase().trim();
-  // PREFIX SECTION NOT WORKING, HELP!
-  // to target consonant clusters
-  let prefix = ["bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr", "nth", "sch", "scr", "shr", "spl", "spr", "squ", "str", "thr"];
-  if (word.startsWith(prefix, 0)){
-    word = delete word.prefix;
-    answer = word.concat(word(prefix) + "ay");
+  let vowel = ["a", "e", "i", "o", "u"];
+  let duoPrefix = ["bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"];
+  let trioPrefix = ["nth", "sch", "scr", "shr", "spl", "spr", "squ", "str", "thr"];
+
+//smaller code I want to work
+  // non working code below..
+  if (word.startsWith(duoPrefix[0], 0)){
+    answer = word.substring(2).concat(word[0]+ word[1] + "ay");
     return answer;
-    // the goal is to delete the prefix (2-3 letters) then add prefix to the end plus "ay".
+    // the goal is to move the prefix (2 letters) then add prefix to the end plus "ay".
+  } else if (word.startsWith(trioPrefix[0], 0)){
+    answer = word.substring(3).concat(word[0]+ word[1]+ word[2] + "ay");
+    return answer;
+    // the goal is to move the prefix (3 letters) then add prefix to the end plus "ay".
+  }  else if (word.startsWith(vowel[0], 0)){
+    answer = word.concat("yay");
+    return answer;
+    // the goal is to keep the first letter in place, while adding "ay" to the end.
+  } else {
+    answer = word.substring(1).concat(word[0] + "ay");
+    return answer;
+    // this is to take the first letter away, then add it to the end of the word plus "ay". WORKS.
   } 
-   // starts with a vowel
-   else if (word.startsWith("a", 0)){
+
+
+  //larger vowel specific code that works...
+  
+  if (word.startsWith("a", 0)){
     answer = word.concat("yay");
     return answer;
   } else if (word.startsWith("e", 0)){
@@ -36,8 +53,8 @@ function pigLatin(word) {
   } else if (word.startsWith("u", 0)){
     answer = word.concat("yay");
     return answer;
-    // this is to keep the first letter in place, while adding "ay" to the end.
   } 
+
   // situation-less words
   else {
     answer = word.substring(1).concat(word[0] + "ay");
