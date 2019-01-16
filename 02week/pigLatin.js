@@ -11,9 +11,17 @@ const rl = readline.createInterface({
 function pigLatin(word) {
   let answer = '';
   word = word.toLowerCase().trim();
-
-  // starts with a vowel
-  if (word.startsWith("a", 0)){
+  // PREFIX SECTION NOT WORKING, HELP!
+  // to target consonant clusters
+  let prefix = ["bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr", "nth", "sch", "scr", "shr", "spl", "spr", "squ", "str", "thr"];
+  if (word.startsWith(prefix, 0)){
+    delete word.prefix;
+    answer = word.concat(word(prefix) + "ay");
+    return answer;
+    // the goal is to delete the prefix (2-3 letters) then add prefix to the end plus "ay".
+  } 
+   // starts with a vowel
+   else if (word.startsWith("a", 0)){
     answer = word.concat("yay");
     return answer;
   } else if (word.startsWith("e", 0)){
@@ -28,8 +36,10 @@ function pigLatin(word) {
   } else if (word.startsWith("u", 0)){
     answer = word.concat("yay");
     return answer;
-  // every other word
-  } else {
+    // this is to keep the first letter in place, while adding "ay" to the end.
+  } 
+  // situation-less words
+  else {
     answer = word.substring(1).concat(word[0] + "ay");
     return answer;
     // this is to take the first letter away, then add it to the end of the word plus "ay".
