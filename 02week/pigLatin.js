@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
-  answer = '';
+  let answer = '';
   word = word.toLowerCase().trim();
 
   // starts with a vowel
