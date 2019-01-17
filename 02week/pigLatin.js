@@ -22,29 +22,22 @@ function pigLatin(word) {
         return answer;
       }
     }
-  }
-  for (let i = 0; i <= word.length; i++){
     for(let d = 0; d < duoPrefix.length; d++){
       if ((word[0] + word[1]) == duoPrefix[d]){
         answer = word.substring(2).concat(word[0]+ word[1] + "ay");
         return answer;
       }
     }
-  }
-  for (let i = 0; i <= word.length; i++){
     for (let t = 0; t < trioPrefix.length; t++){
       if ((word[0] + word[1] + word[3]) == trioPrefix[t]){
         answer = word.substring(3).concat(word[0]+ word[1]+ word[2] + "ay");
         return answer;
       }
     }
-  } 
-  for(let i = 0; i < word.length; i++){
-      answer = word.substring(1).concat(word[0] + "ay");
+    answer = word.substring(1).concat(word[0] + "ay");
       return answer;
     }
   }
-
 
 function getPrompt() {
   rl.question('word ', (answer) => {
