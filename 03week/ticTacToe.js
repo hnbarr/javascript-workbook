@@ -25,11 +25,27 @@ function printBoard() {
 }
 
 function horizontalWin() {
-  // Your code here
+  // TOP
+  board = [ ['X', 'X', 'X'], [' ', ' ', ' '], [' ', ' ', ' '] ];
+  board = [ ['O', 'O', 'O'], [' ', ' ', ' '], [' ', ' ', ' '] ];
+  // MIDDLE
+  board = [ [' ', ' ', ' '], ['X', 'X', 'X'], [' ', ' ', ' '] ];
+  board = [ [' ', ' ', ' '], ['O', 'O', 'O'], [' ', ' ', ' '] ];
+  // BOTTOM
+  board = [ [' ', ' ', ' '], [' ', ' ', ' '], ['X', 'X', 'X'] ];
+  board = [ [' ', ' ', ' '], [' ', ' ', ' '], ['O', 'O', 'O'] ];
 }
 
 function verticalWin() {
-  // Your code here
+  // MIDDLES
+  board = [ [' ', 'X', ' '], [' ', 'X', ' '], [' ', 'X', ' '] ];
+  board = [ [' ', 'O', ' '], [' ', 'O', ' '], [' ', 'O', ' '] ];
+  // BEGINNING
+  board = [ ['X', ' ', ' '], ['X', ' ', ' '], ['X', ' ', ' '] ];
+  board = [ ['O', ' ', ' '], ['O', ' ', ' '], ['O', ' ', ' '] ];
+  // LAST
+  board = [ [' ', ' ', 'X'], [' ', ' ', 'X'], [' ', ' ', 'X'] ];
+  board = [ [' ', ' ', 'O'], [' ', ' ', 'O'], [' ', ' ', 'O'] ];
 }
 
 function diagonalWin() {
