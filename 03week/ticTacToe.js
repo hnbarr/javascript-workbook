@@ -59,13 +59,17 @@ function diagonalWin() {
 }
 
 function checkForWin() {
-  horizontalWin();
-  verticalWin();
-  diagonalWin();
+  if ( horizontalWin() || verticalWin() || diagonalWin() ) { 
+    return true } else { 
+      return false 
+    }
 }
 
+let turns = () => { playerTurn == 'X' ? playerTurn = 'O' : playerTurn = 'X'; }
+// need to make this work
+
 function ticTacToe(row, column) {
-  if (playerTurn == 'X' ? playerTurn = 'O' : playerTurn = 'X');
+  // Your code here
 }
 
 function getPrompt() {
