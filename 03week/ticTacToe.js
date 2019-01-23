@@ -49,11 +49,18 @@ function verticalWin() {
 }
 
 function diagonalWin() {
-  // Your code here
+  // LEFT TO RIGHT
+  board = [ ['X', ' ', ' '], [' ', 'X', ' '], [' ', ' ', 'X'] ];
+  board = [ ['O', ' ', ' '], [' ', 'O', ' '], [' ', ' ', 'O'] ];
+  // RIGHT TO LEFT
+  board = [ [' ', ' ', 'X'], [' ', 'X', ' '], ['X', ' ', ' '] ];
+  board = [ [' ', ' ', 'O'], [' ', 'O', ' '], ['O', ' ', ' '] ];
 }
 
 function checkForWin() {
-  // Your code here
+  horizontalWin();
+  verticalWin();
+  diagonalWin();
 }
 
 function ticTacToe(row, column) {
