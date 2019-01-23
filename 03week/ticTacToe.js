@@ -1,4 +1,5 @@
 'use strict';
+console.log("test test, starting homeowrk!");
 
 const assert = require('assert');
 const readline = require('readline');
