@@ -15,11 +15,6 @@ let board = [
 ];
 
 let playerTurn = 'X';
-if (playerTurn == 'X'){
-  playerTurn = 'O'
-} else {
-  playerTurn = 'X'
-}
 
 
 function printBoard() {
@@ -43,8 +38,9 @@ let horizontalWin = () => {
     (board[2][0] == playerTurn && board[2][1] == playerTurn && board[2][2] == playerTurn)
   ) {
       return true;
+    } else {
+      return false;
     }
-    else return false;
   }
 
 let verticalWin = () => {
@@ -54,8 +50,9 @@ let verticalWin = () => {
     (board[0][2] == playerTurn && board[1][2] == playerTurn && board[2][2] == playerTurn)
   ) {
       return true;
+    } else {
+      return false;
     }
-    else return false;
   }
 
 function diagonalWin() {
@@ -64,20 +61,26 @@ function diagonalWin() {
     (board[0][2] == playerTurn && board[1][1] == playerTurn && board[2][0] == playerTurn)
   ) {
       return true;
+    } else {
+      return false;
     }
-      else return false;
 }
 
 function checkForWin() {
   if ( horizontalWin() || verticalWin() || diagonalWin() ) { 
-    return true 
+    return true; 
   } else { 
-      return false 
+    console.log("Its a tie, no winners!");  
+    return false; 
     }
 }
 
 function ticTacToe(row, column) {
-  // Your code here
+  if (playerTurn == 'X'){
+    playerTurn = 'O'
+  } else {
+    playerTurn = 'X'
+  }
 }
 
 function getPrompt() {
