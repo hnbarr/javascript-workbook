@@ -15,6 +15,12 @@ let board = [
 ];
 
 let playerTurn = 'X';
+if (playerTurn == 'X'){
+  playerTurn = 'O'
+} else {
+  playerTurn = 'X'
+}
+
 
 function printBoard() {
   console.log('   0  1  2');
@@ -25,48 +31,50 @@ function printBoard() {
   console.log('2 ' + board[2].join(' | '));
 }
 
-function horizontalWin() {
-  // TOP
-  board = [ ['X', 'X', 'X'], [' ', ' ', ' '], [' ', ' ', ' '] ];
-  board = [ ['O', 'O', 'O'], [' ', ' ', ' '], [' ', ' ', ' '] ];
-  // MIDDLE
-  board = [ [' ', ' ', ' '], ['X', 'X', 'X'], [' ', ' ', ' '] ];
-  board = [ [' ', ' ', ' '], ['O', 'O', 'O'], [' ', ' ', ' '] ];
-  // BOTTOM
-  board = [ [' ', ' ', ' '], [' ', ' ', ' '], ['X', 'X', 'X'] ];
-  board = [ [' ', ' ', ' '], [' ', ' ', ' '], ['O', 'O', 'O'] ];
-}
+// board layout
+// 0-0|0-1|0-2
+// 1-0|1-1|1-2
+// 2-0|2-1|2-2
 
-function verticalWin() {
-  // MIDDLES
-  board = [ [' ', 'X', ' '], [' ', 'X', ' '], [' ', 'X', ' '] ];
-  board = [ [' ', 'O', ' '], [' ', 'O', ' '], [' ', 'O', ' '] ];
-  // BEGINNING
-  board = [ ['X', ' ', ' '], ['X', ' ', ' '], ['X', ' ', ' '] ];
-  board = [ ['O', ' ', ' '], ['O', ' ', ' '], ['O', ' ', ' '] ];
-  // LAST
-  board = [ [' ', ' ', 'X'], [' ', ' ', 'X'], [' ', ' ', 'X'] ];
-  board = [ [' ', ' ', 'O'], [' ', ' ', 'O'], [' ', ' ', 'O'] ];
-}
+let horizontalWin = () => {
+  if(
+    (board[0][0] == playerTurn && board[0][1] == playerTurn && board[0][2] == playerTurn)||
+    (board[1][0] == playerTurn && board[1][1] == playerTurn && board[1][2] == playerTurn)||
+    (board[2][0] == playerTurn && board[2][1] == playerTurn && board[2][2] == playerTurn)
+  ) {
+      return true;
+    }
+    else return false;
+  }
+
+let verticalWin = () => {
+  if(
+    (board[0][0] == playerTurn && board[1][0] == playerTurn && board[2][0] == playerTurn)||
+    (board[0][1] == playerTurn && board[1][1] == playerTurn && board[2][1] == playerTurn)||
+    (board[0][2] == playerTurn && board[1][2] == playerTurn && board[2][2] == playerTurn)
+  ) {
+      return true;
+    }
+    else return false;
+  }
 
 function diagonalWin() {
-  // LEFT TO RIGHT
-  board = [ ['X', ' ', ' '], [' ', 'X', ' '], [' ', ' ', 'X'] ];
-  board = [ ['O', ' ', ' '], [' ', 'O', ' '], [' ', ' ', 'O'] ];
-  // RIGHT TO LEFT
-  board = [ [' ', ' ', 'X'], [' ', 'X', ' '], ['X', ' ', ' '] ];
-  board = [ [' ', ' ', 'O'], [' ', 'O', ' '], ['O', ' ', ' '] ];
+  if(
+    (board[0][0] == playerTurn && board[1][1] == playerTurn && board[2][2] == playerTurn)||
+    (board[0][2] == playerTurn && board[1][1] == playerTurn && board[2][0] == playerTurn)
+  ) {
+      return true;
+    }
+      else return false;
 }
 
 function checkForWin() {
   if ( horizontalWin() || verticalWin() || diagonalWin() ) { 
-    return true } else { 
+    return true 
+  } else { 
       return false 
     }
 }
-
-let turns = () => { playerTurn == 'X' ? playerTurn = 'O' : playerTurn = 'X'; }
-// need to make this work
 
 function ticTacToe(row, column) {
   // Your code here
@@ -83,7 +91,6 @@ function getPrompt() {
   });
 
 }
-
 
 
 // Tests
