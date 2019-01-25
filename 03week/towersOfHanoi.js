@@ -20,23 +20,28 @@ function printStacks() {
 }
 
 function movePiece(startStack, endStack) {
-  // Your code here
-  let data = stacks.startStack.pop();
-  stacks.endStack.push(data);
+  startStack = startStack.trim().toLowerCase();
+  endStack = endStack.trim().toLowerCase();
+  // to make all submissions work with tests
+  
+  let from = stacks[startStack].getValue[startStack.length - 1];
+  let to = stacks[endStack].getValue[endStack.length - 1];
+  // the last spot in the array, index
+
+  stacks.startStack.pop(from); 
+  stacks.endStack.push(to);
+  // take away from inital stack & move to new stack
 }
 
 function isLegal(startStack, endStack) {
-  // let lastOfDrag = stacks[startStack].length - 1;
-  // let lastOfDrop = stacks[startStack].length - 1;
-
-  if (endStack > startStack){
-    console.log("This is NOT a legal move!" + data + " was not moved");
+  if (endStack.to < startStack.from){
+    console.log("This is NOT a legal move!" + from + " was not moved");
     return false;
   } else {
-    console.log("This is a legal move!" + data + " was moved");
+    console.log("This is a legal move!" + from + " was moved");
     return true;
   }
-
+  // if the destination has a block with value of less than the block were trying to move, it will not allow.
 }
 
 function checkForWin() {
@@ -50,15 +55,13 @@ function checkForWin() {
 }
 
 function towersOfHanoi(startStack, endStack) {
-  // stacks['a']
-  if (!isLegal(startStack, endStack)){
-    console.log("Try again, not a legal move!");
-    return false;
-  } else {
-    return true;
-  }
-
+  movePiece(startStack, endStack);
 }
+
+// saving for later, in case I need to change stuff //
+// stacks['a']
+// let lastOfDrag = stacks[startStack].length - 1;
+// let lastOfDrop = stacks[startStack].length - 1;
 
 function getPrompt() {
   printStacks();
