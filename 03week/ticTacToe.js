@@ -1,5 +1,4 @@
 'use strict';
-console.log("test test, starting homeowrk!");
 
 const assert = require('assert');
 const readline = require('readline');
@@ -33,8 +32,8 @@ function printBoard() {
 
 let horizontalWin = () => {
   if(
-    (board[0][0] == playerTurn && board[0][1] == playerTurn && board[0][2] == playerTurn)
-    (board[1][0] == playerTurn && board[1][1] == playerTurn && board[1][2] == playerTurn)
+    (board[0][0] == playerTurn && board[0][1] == playerTurn && board[0][2] == playerTurn)||
+    (board[1][0] == playerTurn && board[1][1] == playerTurn && board[1][2] == playerTurn)||
     (board[2][0] == playerTurn && board[2][1] == playerTurn && board[2][2] == playerTurn)
   ) {
       return true;
@@ -45,8 +44,8 @@ let horizontalWin = () => {
 
 let verticalWin = () => {
   if(
-    (board[0][0] == playerTurn && board[1][0] == playerTurn && board[2][0] == playerTurn)
-    (board[0][1] == playerTurn && board[1][1] == playerTurn && board[2][1] == playerTurn)
+    (board[0][0] == playerTurn && board[1][0] == playerTurn && board[2][0] == playerTurn)||
+    (board[0][1] == playerTurn && board[1][1] == playerTurn && board[2][1] == playerTurn)||
     (board[0][2] == playerTurn && board[1][2] == playerTurn && board[2][2] == playerTurn)
   ) {
       return true;
@@ -57,7 +56,7 @@ let verticalWin = () => {
 
 function diagonalWin() {
   if(
-    (board[0][0] == playerTurn && board[1][1] == playerTurn && board[2][2] == playerTurn)
+    (board[0][0] == playerTurn && board[1][1] == playerTurn && board[2][2] == playerTurn)||
     (board[0][2] == playerTurn && board[1][1] == playerTurn && board[2][0] == playerTurn)
   ) {
       return true;
@@ -68,7 +67,8 @@ function diagonalWin() {
 
 function checkForWin() {
   if ( horizontalWin() || verticalWin() || diagonalWin() ) { 
-    return true; 
+    console.log(playerTurn + ", you won!"); 
+    return true;  
   } else { 
     console.log("Its a tie, no winners!");  
     return false; 
@@ -76,6 +76,8 @@ function checkForWin() {
 }
 
 function ticTacToe(row, column) {
+  board[row][column] = playerTurn
+  checkForWin();
   if (playerTurn == 'X'){
     playerTurn = 'O'
   } else {
@@ -94,7 +96,6 @@ function getPrompt() {
   });
 
 }
-
 
 // Tests
 
