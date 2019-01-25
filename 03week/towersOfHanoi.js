@@ -21,21 +21,37 @@ function printStacks() {
 
 function movePiece() {
   // Your code here
+  // let data = stacks..pop()
+  // stacks.b.push(data)
+  
 
 }
 
-function isLegal() {
+function isLegal(startStack, endStack) {
   // Your code here
+  let lastOfDrag = stacks[startStack].length - 1;
+  let lastOfDrop = stacks[startStack].length - 1;
+
 
 }
 
 function checkForWin() {
-  // Your code here
-
+  if (stacks.c.length === 4){
+    console.log("You won!");
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function towersOfHanoi(startStack, endStack) {
   // Your code here
+  // stacks['a']
+  // stacks['b']
+  if (!isLegal(startStack, endStack)){
+    console.log("Try again, not a legal move!");
+    return false;
+  }
 
 }
 
@@ -80,7 +96,7 @@ if (typeof describe === 'function') {
   });
   describe('#checkForWin()', () => {
     it('should detect a win', () => {
-      stacks = { a: [], b: [4, 3, 2, 1], c: [] };
+      stacks = { a: [], b: [], c: [4, 3, 2, 1] };
       assert.equal(checkForWin(), true);
       stacks = { a: [1], b: [4, 3, 2], c: [] };
       assert.equal(checkForWin(), false);
