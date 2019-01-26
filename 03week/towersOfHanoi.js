@@ -19,33 +19,31 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece(startStack, endStack) {
-  startStack = startStack.trim().toLowerCase();
-  endStack = endStack.trim().toLowerCase();
-  // to make all submissions work with tests
-  
-  let from = stacks[startStack].getValue[startStack.length - 1];
-  let to = stacks[endStack].getValue[endStack.length - 1];
-  // the last spot in the array, index
+// let startStack = [stacks.a, stacks.b, stacks.c];
+// let endStack = [stacks.a, stacks.b, stacks.c];
+// let blockToMove = startStack[startStack.length -1];
 
-  stacks.startStack.pop(from); 
-  stacks.endStack.push(to);
-  // take away from inital stack & move to new stack
+function movePiece(startStack, endStack) {
+    stacks[endStack].push(stacks[startStack].pop());
+    console.log("Good Move!");
 }
 
 function isLegal(startStack, endStack) {
-  if (endStack.to < startStack.from){
-    console.log("This is NOT a legal move!" + from + " was not moved");
+  if((startStack === 'a' || endStack ==='b' || endStack ==='c') && (endStack ==='a' ||endStack === 'b' ||endStack === 'c')){
+    if (stacks[startStack][stacks[startStack].length -1] < stacks[endStack][stacks[endStack].length - 1]){
+      return true;
+      } else if(stacks[endStack][stacks[endStack].length - 1] === undefined){
+        return true;
+      } else {
+        return false
+      }
+    }
+  else {
     return false;
-  } else {
-    console.log("This is a legal move!" + from + " was moved");
-    return true;
   }
-  // if the destination has a block with value of less than the block were trying to move, it will not allow.
 }
 
 function checkForWin() {
-  // passing
   if (stacks.c.length === 4){
     console.log("You won!");
     return true;
@@ -55,13 +53,24 @@ function checkForWin() {
 }
 
 function towersOfHanoi(startStack, endStack) {
-  movePiece(startStack, endStack);
+  if(isLegal(startStack, endStack)) {
+    movePiece(startStack, endStack)
+    checkForWin();
+  }
 }
 
-// saving for later, in case I need to change stuff //
+// saving for later, in case I need to change stuff. Stuff I took out //
 // stacks['a']
-// let lastOfDrag = stacks[startStack].length - 1;
-// let lastOfDrop = stacks[startStack].length - 1;
+// if(startStack == 'a' || 'b' || 'c' ){
+// endStack == stacks['a'] || stacks['b'] || stacks['c'];
+// let startStack = stacks.startStack.trim().toLowerCase();
+// stacks.endStack.push(blockToMove);
+// let fom = stacks[startStack].length - 1;
+// let to = stacks[startStack].length - 1;
+// let from = stacks.startStack.getValue[startStack.length - 1];
+// let to = stacks.endStack.getValue[endStack.length - 1];
+// let from = stacks.startStack[startStack.length - 1];
+// let to = stacks.endStack[endStack.length - 1];
 
 function getPrompt() {
   printStacks();
