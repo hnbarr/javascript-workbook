@@ -19,10 +19,6 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-// let startStack = [stacks.a, stacks.b, stacks.c];
-// let endStack = [stacks.a, stacks.b, stacks.c];
-// let blockToMove = startStack[startStack.length -1];
-
 function movePiece(startStack, endStack) {
     stacks[endStack].push(stacks[startStack].pop());
     console.log("Good Move!");
@@ -58,19 +54,6 @@ function towersOfHanoi(startStack, endStack) {
     checkForWin();
   }
 }
-
-// saving for later, in case I need to change stuff. Stuff I took out //
-// stacks['a']
-// if(startStack == 'a' || 'b' || 'c' ){
-// endStack == stacks['a'] || stacks['b'] || stacks['c'];
-// let startStack = stacks.startStack.trim().toLowerCase();
-// stacks.endStack.push(blockToMove);
-// let fom = stacks[startStack].length - 1;
-// let to = stacks[startStack].length - 1;
-// let from = stacks.startStack.getValue[startStack.length - 1];
-// let to = stacks.endStack.getValue[endStack.length - 1];
-// let from = stacks.startStack[startStack.length - 1];
-// let to = stacks.endStack[endStack.length - 1];
 
 function getPrompt() {
   printStacks();
