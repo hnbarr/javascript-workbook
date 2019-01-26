@@ -25,16 +25,18 @@ function movePiece(startStack, endStack) {
 }
 
 function isLegal(startStack, endStack) {
-  if((startStack === 'a' || endStack ==='b' || endStack ==='c') && (endStack ==='a' ||endStack === 'b' ||endStack === 'c')){
+  if((startStack === 'a' || startStack === 'b' || startStack === 'c') && (endStack === 'a' ||endStack === 'b' ||endStack === 'c')){
     if (stacks[startStack][stacks[startStack].length -1] < stacks[endStack][stacks[endStack].length - 1]){
       return true;
       } else if(stacks[endStack][stacks[endStack].length - 1] === undefined){
         return true;
       } else {
+        console.log("Sorry, move not allowed.");
         return false
       }
     }
   else {
+    console.log("Sorry, entry not accepted. Please choose a, b or c.");
     return false;
   }
 }
