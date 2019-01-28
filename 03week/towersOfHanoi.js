@@ -22,22 +22,26 @@ function printStacks() {
 function movePiece(startStack, endStack) {
     stacks[endStack].push(stacks[startStack].pop());
     console.log("Good Move!");
+    // this moves the last block from the startstack to the endstack!
 }
 
 function isLegal(startStack, endStack) {
   if((startStack === 'a' || startStack === 'b' || startStack === 'c') && (endStack === 'a' ||endStack === 'b' ||endStack === 'c')){
     if (stacks[startStack][stacks[startStack].length -1] < stacks[endStack][stacks[endStack].length - 1]){
       return true;
+      // this will be a legal move if; the last block on startstack is smaller than the last block on endstack
       } else if(stacks[endStack][stacks[endStack].length - 1] === undefined){
         return true;
       } else {
         console.log("Sorry, move not allowed.");
         return false
+        // not legal due to rule above.
       }
     }
   else {
     console.log("Sorry, entry not accepted. Please choose a, b or c.");
     return false;
+    // claims that you have not selected a supported choice.
   }
 }
 
@@ -48,9 +52,11 @@ function checkForWin() {
   } else {
     return false;
   }
+  // To win the game, the last stack will be full!
 }
 
 function towersOfHanoi(startStack, endStack) {
+  // did if statement so that game will run in proper order. If move is legal, then make move and check for win. :)
   if(isLegal(startStack, endStack)) {
     movePiece(startStack, endStack)
     checkForWin();
