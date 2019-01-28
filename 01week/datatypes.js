@@ -38,10 +38,23 @@ console.log(2 + 18);
 var a = 3;
 var b = 5;
 //JavaScript program that runs only when 2 things are true.
-console.log(a > 0 && b > 0);
+if (a > 0 && b > 0){
+    console.log("both are true!")
+} else {
+    console.log("one or two are false!")
+}
 
 //JavaScript program that runs when 1 of 2 things are true.
-console.log(a > 0 || b > 10);
+if (a > 0 || b > 10){
+    console.log("one of two are true!")
+} else {
+    console.log("both are false!")
+}
+
 
 //JavaScript program that runs when both things are not true.
-console.log(!(a > 0 && b > 0));
+if (!(a > 0 && b > 0)){
+    console.log("both are false!")
+} else {
+    console.log("both are not true! This program ran!")
+}
