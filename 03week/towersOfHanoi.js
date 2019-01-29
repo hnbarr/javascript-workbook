@@ -60,8 +60,8 @@ function towersOfHanoi(startStack, endStack) {
   // did if statement so that game will run in proper order. If move is legal, then make move and check for win. :)
   if(isLegal(startStack, endStack)) {
     movePiece(startStack, endStack)
-    checkForWin();
   }
+  checkForWin();
   restart()
 }
 
