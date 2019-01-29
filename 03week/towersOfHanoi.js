@@ -32,6 +32,7 @@ function isLegal(startStack, endStack) {
       // this will be a legal move if; the last block on startstack is smaller than the last block on endstack
       } else if(stacks[endStack][stacks[endStack].length - 1] === undefined){
         return true;
+        // because if the row is empty its undefined, can not compare undefined to a number.
       } else {
         console.log("Sorry, move not allowed.");
         return false
