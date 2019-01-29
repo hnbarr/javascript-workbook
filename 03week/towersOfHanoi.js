@@ -62,6 +62,19 @@ function towersOfHanoi(startStack, endStack) {
     movePiece(startStack, endStack)
     checkForWin();
   }
+  restart()
+}
+
+function restart(){
+  if (checkForWin()){
+    // restart game
+    console.log("Let's restart and play again!")
+    stacks = {
+      a: [4, 3, 2, 1],
+      b: [],
+      c: []
+    }
+  }
 }
 
 function getPrompt() {
