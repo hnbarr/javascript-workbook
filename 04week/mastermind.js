@@ -28,15 +28,19 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function generateHint() {
+function generateHint(solution, guess) {
   // your code here
+  let solutionArray = []
+  let guessArray = []
 }
 
 function mastermind(guess) {
   // Comment this out to generate a random solution
   solution = 'abcd'; 
   // your code here
-  
+  if(guess == solution){
+    return 'You guessed it!'
+  }
 }
 
 
