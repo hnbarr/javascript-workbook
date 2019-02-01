@@ -67,7 +67,6 @@ function mastermind(guess) {
 
 function getPrompt() {
   rl.question('guess 4 letters that are a-h: ', (guess) => {
-    // legalMove(guess);
     mastermind(guess);
     generateHint(solution, guess);
     printBoard();
@@ -104,22 +103,3 @@ if (typeof describe === 'function') {
   generateSolution();
   getPrompt();
 }
-
-
-/* 
-function legalMove (guess){
-  let guessArray = guess.split('')
-  // making a legal move
-  for(let x = 0; x < letters.length; x++){
-    // console.log(letters[x])
-    for(let y = 0; y < guessArray.length; y++){
-      // console.log(guessArray[y])
-      if((guessArray[y]).includes(letters[x])){
-        console.log(guessArray)
-      } else {
-        console.log("one or more letters in your guess is not valid, use a-h only.")
-      } 
-    }
-  }
-} 
-*/
