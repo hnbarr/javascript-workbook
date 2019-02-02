@@ -35,19 +35,16 @@ function generateHint(solution, guess) {
   let solutionArray = solution.split('')
   let guessArray = guess.split('')
 
-  for(let i = 0; i < 4; i++ ){  
-    if (solutionArray[i] === guessArray[i]){ // if one or more letters in guess is a match in solution
-      let targetIndex = guessArray.indexOf(solutionArray[i]);
-      correctLetterLocations++ 
-      solutionArray[i] = null
-    if(solutionArray.indexOf([i]) === guessArray.indexOf([i])){ // if the matching letters share same index
-      if(targetIndex > -1 ){ // meaning if index is 0+, being in the array
-        correctLetters++
-        solutionArray.targetIndex = null;
-        }
+  for(let i = 0; i < 4; i++ ){
+    // console.log(guessArray.indexOf(solutionArray[i]))  
+    if (solutionArray[i] === guessArray[i]){ // if one or more letters in same spot as solution
+      correctLetterLocations++
       }
-    }
+    if(guessArray.indexOf(solutionArray[i]) > -1){ // if the matching letters match solution anywhere
+        correctLetters++
+      }
   }
+  
   console.log("Hint: " + (colors.red(correctLetterLocations)) + "-" + (colors.white(correctLetters)))
 }
 
