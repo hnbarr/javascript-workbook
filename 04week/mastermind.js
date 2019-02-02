@@ -61,7 +61,7 @@ function mastermind(guess) {
   } else {
     console.log('Guess again.')
   }
-  console.log(colors.white("Number of guesses; " + counter))
+  console.log(colors.white("Number of guesses: " + counter))
 }
 
 
