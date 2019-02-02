@@ -52,21 +52,21 @@ function generateHint(solution, guess) {
 }
 
 function mastermind(guess) {
-  // solution = 'abcd'
+  solution = 'abcd'
   counter++
   if(counter >= 10){
     console.log('You ran out of turns! The solution was ' + solution)
   } else if(guess === solution){
-    console.log('You guessed it!')
+    console.log(colors.rainbow('You guessed it!'))
   } else {
     console.log('Guess again.')
   }
-  console.log(counter)
+  console.log(colors.white("Number of guesses; " + counter))
 }
 
 
 function getPrompt() {
-  rl.question('guess 4 letters that are a-h: ', (guess) => {
+  rl.question('Guess 4 letters that are a-h: ', (guess) => {
     mastermind(guess);
     generateHint(solution, guess);
     printBoard();
