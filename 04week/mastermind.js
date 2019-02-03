@@ -32,11 +32,10 @@ function getRandomInt(min, max) {
 function generateHint(solution, guess) {
   let correctLetterLocations = 0; //red
   let correctLetters = 0; //white
-  let solutionArray = solution.split('')
-  let guessArray = guess.split('')
+  let solutionArray = solution.split('');
+  let guessArray = guess.split('');
 
   for(let i = 0; i < 4; i++ ){
-    // console.log(guessArray.indexOf(solutionArray[i]))  
     if (solutionArray[i] === guessArray[i]){ // if one or more letters in same spot as solution
       correctLetterLocations++
       }
@@ -44,21 +43,20 @@ function generateHint(solution, guess) {
         correctLetters++
       }
   }
-  
-  console.log("Hint: " + (colors.red(correctLetterLocations)) + "-" + (colors.white(correctLetters)))
+  console.log(`Hint: ${(colors.red(correctLetterLocations))}-${(colors.white(correctLetters))}`)
 }
 
 function mastermind(guess) {
   solution = 'abcd'
   counter++
-  if(counter >= 10){
-    console.log('You ran out of turns! The solution was ' + solution)
-  } else if(guess === solution){
-    console.log(colors.rainbow('You guessed it!'))
-  } else {
-    console.log('Guess again.')
-  }
   console.log(colors.white("Number of guesses: " + counter))
+  if(counter >= 10){
+    console.log ('You ran out of turns! The solution was ' + solution)
+  } else if(guess === solution){
+    console.log (colors.rainbow('You guessed it!'))
+  } else {
+    console.log (colors.green('Guess again.'))
+  }
 }
 
 
@@ -96,7 +94,6 @@ if (typeof describe === 'function') {
   });
 
 } else {
-
   generateSolution();
   getPrompt();
 }
