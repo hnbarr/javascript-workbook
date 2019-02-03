@@ -36,9 +36,6 @@ function generateHint(solution, guess) {
   let guessArray = guess.split('');
 
   for(let i = 0; i < 4; i++ ){
-    // console.log(guessArray.indexOf(solutionArray[i]))
-    // console.log(guessArray[i], solutionArray[i])
-    // console.log(guessArray, solutionArray)
     if (solutionArray[i] === guessArray[i]){ // if one or more letters in same spot as solution
       correctLetterLocations++
       }
