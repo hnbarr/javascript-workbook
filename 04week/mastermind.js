@@ -36,6 +36,9 @@ function generateHint(solution, guess) {
   let guessArray = guess.split('');
 
   for(let i = 0; i < 4; i++ ){
+    // console.log(guessArray.indexOf(solutionArray[i]))
+    // console.log(guessArray[i], solutionArray[i])
+    // console.log(guessArray, solutionArray)
     if (solutionArray[i] === guessArray[i]){ // if one or more letters in same spot as solution
       correctLetterLocations++
       }
@@ -44,6 +47,7 @@ function generateHint(solution, guess) {
       }
   }
   console.log(`Hint: ${(colors.red(correctLetterLocations))}-${(colors.white(correctLetters))}`)
+  return `${(colors.red(correctLetterLocations))}-${(colors.white(correctLetters))}`
 }
 
 function mastermind(guess) {
@@ -52,10 +56,13 @@ function mastermind(guess) {
   console.log(colors.white("Number of guesses: " + counter))
   if(counter >= 10){
     console.log ('You ran out of turns! The solution was ' + solution)
+    return 'You ran out of turns! The solution was ' + solution
   } else if(guess === solution){
-    console.log (colors.rainbow('You guessed it!'))
+    console.log (colors.magenta('You guessed it!'))
+    return "You guessed it!"
   } else {
     console.log (colors.green('Guess again.'))
+    return "Guess again."
   }
 }
 
@@ -85,10 +92,10 @@ if (typeof describe === 'function') {
 
   describe('#generateHint()', () => {
     it('should generate hints', () => {
-      assert.equal(generateHint('abdc'), '2-2');
+      assert.equal(generateHint('abdc'), '2-4');
     });
     it('should generate hints if solution has duplicates', () => {
-      assert.equal(generateHint('aabb'), '1-1');
+      assert.equal(generateHint('aabb'), '1-2');
     });
 
   });
