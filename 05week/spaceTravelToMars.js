@@ -10,6 +10,9 @@ let jobTypes = {
 };
 
 // Your code here
+let crewMember = {
+  
+}
 
 //tests
 if (typeof describe === 'function'){
