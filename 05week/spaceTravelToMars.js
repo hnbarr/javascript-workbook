@@ -18,7 +18,30 @@ class CrewMember {
     this.specialSkill = specialSkill
     this.ship = null
   }
+  enterShip() {
+    console.log("working, yo")
+    CrewMember.ship.push()
+  }
 }
+
+class Ship {
+  constructor(name, type, ability, crew){
+    this.name = name
+    this.type = type
+    this.ability = ability
+    this.crew = []
+  }
+  missionStatement(){
+    console.log('this working too, dawg')
+    if (Ship.crew.length > 0 ){
+      return "Ascend into low orbit"
+    } else {
+      return "Can't perform a mission yet."
+    }
+  }
+}
+
+
 
 //tests
 if (typeof describe === 'function'){
