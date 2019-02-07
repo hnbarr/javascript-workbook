@@ -10,8 +10,14 @@ let jobTypes = {
 };
 
 // Your code here
-let crewMember = {
-  
+
+class CrewMember {
+  constructor(name, job, specialSkill, ship){
+    this.name = name
+    this.job = job
+    this.specialSkill = specialSkill
+    this.ship = null
+  }
 }
 
 //tests
