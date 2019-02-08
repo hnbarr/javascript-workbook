@@ -45,7 +45,6 @@ class Ship {
 }
 
 
-
 //tests
 if (typeof describe === 'function'){
   describe('CrewMember', function(){
