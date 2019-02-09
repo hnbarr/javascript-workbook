@@ -1,5 +1,5 @@
 'use strict';
-
+var colors = require('colors')
 const assert = require('assert');
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -7,13 +7,21 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-function Checker() {
-  // Your code here
+class Checker {
+  constructor(color){
+    if(color === 'white'){
+      this.symbol = String.fromCharCode(0x125CB);
+    } else {
+      this.symbol = String.fromCharCode(0x125CF);
+    }
+  }
 }
+
 
 class Board {
   constructor() {
     this.grid = []
+    this.checkers = []
   }
   // method that creates an 8x8 array, filled with null values
   createGrid() {
@@ -52,6 +60,45 @@ class Board {
   }
 
   // Your code here
+  createCheckers() {
+    let whitePositions = [
+      [0, 1], [0, 3], [0, 5], [0, 7],
+      [1, 0], [1, 2], [1, 4], [1, 6],
+      [2, 1], [2, 3], [2, 5], [2, 7]
+    ]
+    for (let i = 0; i < 12; i++){
+      let whiteRow = whitePositions[i][0];
+      let whiteColumn = whitePositions[i][1];
+      let whiteChecker = new Checker('white');
+      this.checkers.push(whiteChecker);
+      this.grid[whiteRow][whiteColumn] = whiteChecker;
+    }
+    
+    let blackPositions = [
+      [5, 0], [5, 2], [5, 4], [5, 6],
+      [6, 1], [6, 3], [6, 5], [6, 7],
+      [7, 0], [7, 2], [7, 4], [7, 6]
+    ]
+    for(let i = 0; i < 12; i++){
+      let blackRow = blackPositions[i][0];
+      let blackColumn = blackPositions[i][1];
+      let blackChecker = new Checker('black');
+      this.checkers.push(blackChecker);
+      this.grid[blackRow][blackColumn] = blackChecker
+    }
+  }
+
+  selectChecker (row, column) {
+    // let start = row + column ?????
+    // let end =  row + column ?????
+    // let checker = this.start
+    // return this.checker ??????
+  }
+
+  killChecker (start, end) {
+    // code here 
+  }
+
 }
 
 class Game {
@@ -60,6 +107,10 @@ class Game {
   }
   start() {
     this.board.createGrid();
+    this.board.createCheckers()
+  }
+  moveChecker() {
+    // this needs to be able to make moves
   }
 }
 
