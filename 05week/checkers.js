@@ -105,11 +105,11 @@ class Game {
   moveChecker(start, end) {
     let startRow = parseInt(start.charAt(0))
     let startColumn = parseInt(start.charAt(1))
-    console.log('startRow:', startRow, 'startColumn:', startColumn)
+    // console.log('startRow:', startRow, 'startColumn:', startColumn)
 
     let endRow = parseInt(end.charAt(0))
     let endColumn = parseInt(end.charAt(1))
-    console.log('endRow:', endRow, 'endColumn:', endColumn)
+    // console.log('endRow:', endRow, 'endColumn:', endColumn)
 
     this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn];
     this.board.grid[startRow][startColumn] = null; //takes away  fromfirst  spot, bc it was moved
@@ -119,13 +119,9 @@ class Game {
       let midpointRow = ((startRow + endRow)/2)
       let midpointColumn = ((startColumn + endColumn)/2)
       let killPoint = [midpointRow, midpointColumn]
-      // let killPoint = [];
-      // let midpointRow = (startRow + endRow)/2;
-      // let midpointColumn = (startColumn + endColumn)/2;
-      // killPoint.push(midpointRow, midpointColumn)
-      console.log(midpointRow, midpointColumn, killPoint)
-      this.board.grid[midpointRow][midpointColumn] = null //takes away  from first  spot, bc it was moved
-
+      // console.log(midpointRow, midpointColumn, killPoint)
+      this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
+      this.board.checkers.length--
     }
 
     // 50-41, 23-32, 41-23
@@ -176,12 +172,3 @@ if (typeof describe === 'function') {
 } else {
   getPrompt();
 }
-
-
-// extra junky stuff
-  // selectChecker (row, column) {
-  //   let checker =  this.grid
-  //   row = this.grid[row];
-  //   column = this.grid[column];
-  //   console.log(checker, row, column) //undefined undefined
-  // }
