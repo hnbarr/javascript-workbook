@@ -105,21 +105,23 @@ class Game {
   moveChecker(start, end) {
     let startRow = parseInt(start.charAt(0))
     let startColumn = parseInt(start.charAt(1))
-    console.log('startRow', startRow, 'startColumn', startColumn)
+    console.log('startRow:', startRow, 'startColumn:', startColumn)
 
     let endRow = end.charAt(0);
     let endColumn = end.charAt(1);
-    console.log('endRow', endRow, 'endColumn', endColumn)
+    console.log('endRow:', endRow, 'endColumn:', endColumn)
 
     this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn];
-    this.board.grid[startRow][startColumn] = null;
+    this.board.grid[startRow][startColumn] = null; //takes away  fromfirst  spot, bc it was moved
     
     if(Math.abs(endRow - startRow) === 2){
       this.board.killChecker();
-      let midpointRow = (startRow + endRow)/2;
-      let midpointColumn = (startColumn + endColumn)/2;
+      let midpointRow = 3
+      let midpointColumn = 2
       let killPoint = [midpointRow, midpointColumn]
-      console.log(midpointRow, midpointColumn, midpoint)
+      console.log(midpointRow, midpointColumn, killPoint)
+      console.log(this.board.grid[midpointRow][midpointColumn] = null) //takes away  from first  spot, bc it was moved
+
     }
 
     // 50-41, 23-32, 41-23
