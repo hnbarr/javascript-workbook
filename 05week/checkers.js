@@ -107,8 +107,8 @@ class Game {
     let startColumn = parseInt(start.charAt(1))
     console.log('startRow:', startRow, 'startColumn:', startColumn)
 
-    let endRow = end.charAt(0);
-    let endColumn = end.charAt(1);
+    let endRow = parseInt(end.charAt(0))
+    let endColumn = parseInt(end.charAt(1))
     console.log('endRow:', endRow, 'endColumn:', endColumn)
 
     this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn];
@@ -116,11 +116,15 @@ class Game {
     
     if(Math.abs(endRow - startRow) === 2){
       this.board.killChecker();
-      let midpointRow = 3
-      let midpointColumn = 2
+      let midpointRow = ((startRow + endRow)/2)
+      let midpointColumn = ((startColumn + endColumn)/2)
       let killPoint = [midpointRow, midpointColumn]
+      // let killPoint = [];
+      // let midpointRow = (startRow + endRow)/2;
+      // let midpointColumn = (startColumn + endColumn)/2;
+      // killPoint.push(midpointRow, midpointColumn)
       console.log(midpointRow, midpointColumn, killPoint)
-      console.log(this.board.grid[midpointRow][midpointColumn] = null) //takes away  from first  spot, bc it was moved
+      this.board.grid[midpointRow][midpointColumn] = null //takes away  from first  spot, bc it was moved
 
     }
 
