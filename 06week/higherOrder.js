@@ -2,6 +2,13 @@
 
 const assert = require('assert');
 
+//Create a forEach() function that takes an array of items and a function that runs the function arr.length number of times.
+
+//Create a map() function that takes an array of items and a function that returns an array with each item manipulated by that function.
+
+//Create a filter() function that takes an array of items and a function that returns an array with only the items that return true in the function.
+
+
 function forEach(arr, callback) {
   // Your code here
 }
