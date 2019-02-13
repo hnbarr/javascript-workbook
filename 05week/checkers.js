@@ -89,14 +89,14 @@ class Board {
   }
 
   selectChecker (row, column) {
-    // let start = row + column ?????
-    // let end =  row + column ?????
-    // let checker = this.start
-    // return this.checker ??????
+    row = this.grid[row];
+    column = this.grid[column];
+    return (row && column)
   }
 
   killChecker (start, end) {
     // code here 
+    
   }
 
 }
@@ -107,10 +107,20 @@ class Game {
   }
   start() {
     this.board.createGrid();
-    this.board.createCheckers()
+    this.board.createCheckers();
+    this.board.selectChecker();
   }
-  moveChecker() {
-    // this needs to be able to make moves
+  moveChecker(start, end) {
+    // code here
+    this.board.selectChecker();
+    let startRow = start.charAt(0);
+    let startColumn = start.charAt(1);
+    console.log('startRow', startRow, 'startColumn', startColumn)
+    let endRow = end.charAt(0);
+    let endColumn = end.charAt(1);
+    console.log('endRow', endRow, 'endColumn', endColumn)
+
+    
   }
 }
 
@@ -126,7 +136,6 @@ function getPrompt() {
 
 const game = new Game();
 game.start();
-
 
 // Tests
 if (typeof describe === 'function') {
