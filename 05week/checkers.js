@@ -88,19 +88,10 @@ class Board {
     }
   }
 
-  selectChecker (row, column) {
-    row = this.grid[row];
-    column = this.grid[column];
-    return (row && column)
-  }
-
   killChecker (position) {
-    // code here 
-    // position = this.board.selectChecker([row][column]);
-    // this.checkers.splice(position);
-    // this.grid.killChecker.position = null;
-  }
+   console.log("KILLED")
 
+  }
 }
 
 class Game {
@@ -110,22 +101,28 @@ class Game {
   start() {
     this.board.createGrid();
     this.board.createCheckers();
-    this.board.selectChecker();
   }
   moveChecker(start, end) {
-    this.board.selectChecker();
-    let startRow = start.charAt(0);
-    let startColumn = start.charAt(1);
-    
+    let startRow = parseInt(start.charAt(0))
+    let startColumn = parseInt(start.charAt(1))
     console.log('startRow', startRow, 'startColumn', startColumn)
+
     let endRow = end.charAt(0);
     let endColumn = end.charAt(1);
-    
     console.log('endRow', endRow, 'endColumn', endColumn)
+
     this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn];
     this.board.grid[startRow][startColumn] = null;
     
-    console.log(this.board.killChecker()) //undefined
+    if(Math.abs(endRow - startRow) === 2){
+      this.board.killChecker();
+      let midpointRow = (startRow + endRow)/2;
+      let midpointColumn = (startColumn + endColumn)/2;
+      let killPoint = [midpointRow, midpointColumn]
+      console.log(midpointRow, midpointColumn, midpoint)
+    }
+
+    // 50-41, 23-32, 41-23
   }
 }
 
@@ -173,3 +170,12 @@ if (typeof describe === 'function') {
 } else {
   getPrompt();
 }
+
+
+// extra junky stuff
+  // selectChecker (row, column) {
+  //   let checker =  this.grid
+  //   row = this.grid[row];
+  //   column = this.grid[column];
+  //   console.log(checker, row, column) //undefined undefined
+  // }
