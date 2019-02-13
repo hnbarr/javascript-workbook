@@ -94,9 +94,11 @@ class Board {
     return (row && column)
   }
 
-  killChecker (start, end) {
+  killChecker (position) {
     // code here 
-    
+    // position = this.board.selectChecker([row][column]);
+    // this.checkers.splice(position);
+    // this.grid.killChecker.position = null;
   }
 
 }
@@ -111,16 +113,19 @@ class Game {
     this.board.selectChecker();
   }
   moveChecker(start, end) {
-    // code here
     this.board.selectChecker();
     let startRow = start.charAt(0);
     let startColumn = start.charAt(1);
+    
     console.log('startRow', startRow, 'startColumn', startColumn)
     let endRow = end.charAt(0);
     let endColumn = end.charAt(1);
-    console.log('endRow', endRow, 'endColumn', endColumn)
-
     
+    console.log('endRow', endRow, 'endColumn', endColumn)
+    this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn];
+    this.board.grid[startRow][startColumn] = null;
+    
+    console.log(this.board.killChecker()) //undefined
   }
 }
 
