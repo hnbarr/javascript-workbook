@@ -40,12 +40,12 @@ const filter = (arr, callback) => {
 //Create a some() function that takes an array of items and a function that returns true or false if any of the items return true in the function.
 const some = (arr, callback) => {
   let evenNums = [];
-  for(let i = 1; i < arr.length; i++){
-    if(i % 2 === 0){
-      evenNums.push(i)
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] % 2 === 0){
+      evenNums.push(arr[i])
     }
   }
-  return(evenNums.length >= 1)
+  return (evenNums.length >= 1)
 }
 
 
@@ -89,7 +89,6 @@ if (typeof describe === 'function') {
     });
   });
 
-// thursday
   describe('#some()', () => {
     let count = 0;
     const somed = some([1, 2, 3, 4], (num) => {
