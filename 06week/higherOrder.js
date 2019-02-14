@@ -39,8 +39,13 @@ const filter = (arr, callback) => {
 
 //Create a some() function that takes an array of items and a function that returns true or false if any of the items return true in the function.
 const some = (arr, callback) => {
-  // Your code here
-  // thursday homework
+  let evenNums = [];
+  for(let i = 1; i < arr.length; i++){
+    if(i % 2 === 0){
+      evenNums.push(i)
+    }
+  }
+  return(evenNums.length >= 1)
 }
 
 
