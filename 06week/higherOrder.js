@@ -26,12 +26,14 @@ const map = (arr, callback) => {
 
 //Create a filter() function that takes an array of items and a function that returns an array with only the items that return true in the function.
 const filter = (arr, callback) => {
-  // for(num of arr){
-  //   if (num.length > (num % 2 === 0)){
-  //     let 
-  //     return callback(num)
-  //   }
-  // }
+  let even = []
+    for(let i = 1; i < arr.length; i++){
+      if(i % 2 === 0){
+      even.push(i)
+      console.log(even)
+    }
+  }
+  return even
 }
 
 
