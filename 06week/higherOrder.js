@@ -15,16 +15,23 @@ const forEach = (arr, callback)=>{
 
 //Create a map() function that takes an array of items and a function that returns an array with each item manipulated by that function.
 const map = (arr, callback) => {
-  for(let i =  0; i >  arr.length;  i++){
-    let root = arr[i] * arr[i];
-    callback(root)
+  let squareArr = []
+  for(let i = 0; i < arr.length; i++){
+    let square = arr[i]*arr[i]
+    console.log(square)
+    squareArr.push(square)
   }
+  return squareArr
 }
-
 
 //Create a filter() function that takes an array of items and a function that returns an array with only the items that return true in the function.
 const filter = (arr, callback) => {
-  // arr.filter()
+  // for(num of arr){
+  //   if (num.length > (num % 2 === 0)){
+  //     let 
+  //     return callback(num)
+  //   }
+  // }
 }
 
 
