@@ -3,30 +3,42 @@
 const assert = require('assert');
 
 //Create a forEach() function that takes an array of items and a function that runs the function arr.length number of times.
+const forEach = (arr, callback)=>{
+  for(let i = 0; i < arr.length; i++){
+  const item = arr[i];
+  if(callback){
+    console.log("callback present", item)
+    callback(item)
+    }
+  }
+}
 
 //Create a map() function that takes an array of items and a function that returns an array with each item manipulated by that function.
+const map = (arr, callback) => {
+  for(let i =  0; i >  arr.length;  i++){
+    let root = arr[i] * arr[i];
+    callback(root)
+  }
+}
+
 
 //Create a filter() function that takes an array of items and a function that returns an array with only the items that return true in the function.
-
-
-function forEach(arr, callback) {
-  // Your code here
+const filter = (arr, callback) => {
+  // arr.filter()
 }
 
-function map(arr, callback) {
+
+//Create a some() function that takes an array of items and a function that returns true or false if any of the items return true in the function.
+const some = (arr, callback) => {
   // Your code here
+  // thursday homework
 }
 
-function filter(arr, callback) {
-  // Your code here
-}
 
-function some(arr, callback) {
+//Create an every() function that takes an array of items and a function that returns true or false if all of the items return true in the function.
+const every  = (arr, callback) => {
   // Your code here
-}
-
-function every(arr, callback) {
-  // Your code here
+  // thursday homework
 }
 
 if (typeof describe === 'function') {
@@ -63,6 +75,9 @@ if (typeof describe === 'function') {
     });
   });
 
+
+
+// thursday
   describe('#some()', () => {
     let count = 0;
     const somed = some([1, 2, 3, 4], (num) => {
