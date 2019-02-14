@@ -49,7 +49,12 @@ const some = (arr, callback) => {
 
 //Create an every() function that takes an array of items and a function that returns true or false if all of the items return true in the function.
 const every  = (arr, callback) => {
-  
+  for(let i = 0; i < arr.length; i++){
+    if(!callback(arr[i], i, arr)){
+      return false
+    }
+  }
+  return true
 }
 
 if (typeof describe === 'function') {
