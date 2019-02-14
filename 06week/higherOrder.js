@@ -84,8 +84,6 @@ if (typeof describe === 'function') {
     });
   });
 
-
-
 // thursday
   describe('#some()', () => {
     let count = 0;
