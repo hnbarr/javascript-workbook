@@ -7,7 +7,7 @@ const forEach = (arr, callback)=>{
   for(let i = 0; i < arr.length; i++){
   const item = arr[i];
   if(callback){
-    console.log("callback present", item)
+    // console.log("callback present", item)
     callback(item)
     }
   }
@@ -18,7 +18,7 @@ const map = (arr, callback) => {
   let squareArr = []
   for(let i = 0; i < arr.length; i++){
     let square = arr[i]*arr[i]
-    console.log(square)
+    // console.log(square)
     squareArr.push(square)
   }
   return squareArr
@@ -30,12 +30,11 @@ const filter = (arr, callback) => {
     for(let i = 1; i < arr.length; i++){
       if(i % 2 === 0){
       even.push(i)
-      console.log(even)
+      // console.log(even)
     }
   }
   return even
 }
-
 
 //Create a some() function that takes an array of items and a function that returns true or false if any of the items return true in the function.
 const some = (arr, callback) => {
