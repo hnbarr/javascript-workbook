@@ -116,10 +116,13 @@ const weather = [
 ]
 
 //using a higher order function, create an array of the unique 'weather_state_name' values of the weather array. Your function should return the following array ['Light Cloud', 'Heavy Cloud', 'Showers']
-const weatherStates = 
+const weatherStates = weather.map(forecast =>{ 
+    const wObj = forecast.weather_state_name
+    return wObj;
+ });
 console.log(weatherStates)
 
 //find the id of the object in weather that has a min_temp of 15.915
 
-const idealTemp = 
-console.log(idealTemp)
+// const idealTemp = 
+// console.log(idealTemp)
