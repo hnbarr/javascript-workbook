@@ -33,7 +33,7 @@ const nums = strNums.map(num => {
 console.log(nums)
 
 // Find the sum of the even values
-const sumEvens = strNums.reduce((acc, num) => {
+const sumEvens = nums.reduce((acc, num) => {
     if(num % 2 === 0){
         acc += num
     }
@@ -45,7 +45,6 @@ console.log(sumEvens);
 const atxIdx = nums.findIndex((num, i) => {
     return num + i === 512
 })
-
 console.log(`index: ${atxIdx}, value: ${nums[atxIdx]}`);
 
 const weather = [
@@ -123,6 +122,7 @@ const weatherStates = weather.map(forecast =>{
 console.log(weatherStates)
 
 //find the id of the object in weather that has a min_temp of 15.915
-
-// const idealTemp = 
-// console.log(idealTemp)
+const idealTemp = weather.find(temp => {
+    return temp.min_temp === 15.915
+}).id
+console.log(idealTemp)
