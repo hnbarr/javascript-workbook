@@ -27,13 +27,13 @@ const strNums =["1","4","1","5","9","2","6","5","3","5","8","9","7","9","3","2",
 "6","6","1","1","1","9","5","9","0","9","2","1","6","4","2","0","1","9","8","9"];
 
 // Given 1000 digits of PI as strings, return an array of the digits as numbers
-const nums = strNums.map(num => {
+const nums = strNums.map(num => { //this one is just easy
       return parseInt(num)
   })
 console.log(nums)
 
 // Find the sum of the even values
-const sumEvens = nums.reduce((acc, num) => {
+const sumEvens = nums.reduce((acc, num) => { //used nums from above, i had it with strNums, but that was just a combo of all string numbers
     if(num % 2 === 0){
         acc += num
     }
@@ -115,14 +115,14 @@ const weather = [
 ]
 
 //using a higher order function, create an array of the unique 'weather_state_name' values of the weather array. Your function should return the following array ['Light Cloud', 'Heavy Cloud', 'Showers']
-const weatherStates = weather.map(forecast =>{ 
-    const wObj = forecast.weather_state_name
-    return wObj;
+const weatherStates = weather.map(eachObj =>{  //used eachObj, bc were looking through each object inside weather
+    const forecast = eachObj.weather_state_name  //forecast is the value of the key:weather_state_name
+    return forecast;
  });
 console.log(weatherStates)
 
 //find the id of the object in weather that has a min_temp of 15.915
-const idealTemp = weather.find(temp => {
-    return temp.min_temp === 15.915
-}).id
+const idealTemp = weather.find(temp => { //looking for temps here
+    return temp.min_temp === 15.915 //more specific, the min temp
+}).id; //this returns the id number once found the temp were looking for
 console.log(idealTemp)
