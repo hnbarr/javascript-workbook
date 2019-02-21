@@ -3,36 +3,37 @@
 class TicTacToe extends React.Component {
   constructor(props) {
     super(props);
-    this.state ={
-      playerMove: 'X'
-    }
+    this.state = {
+      value: null,
+    };
   }
-
-  toggle = () => {
-    if(this.state.playerMove==='X'){
-      this.setState({playerMove: 'O'})
-    }else this.setState({playerMove: 'X'})
-  }
-
+// may have to switch this up or change the type of action. All squares are chainging on click, to the same value.
+ toggle = () => {
+  if(this.state.value=== null){
+    this.setState({value: 'X'})
+  } else if(this.state.value === 'X'){
+   this.setState({value: 'O'})
+  } else this.setState({value: 'X'})
+}
+ //need to make these separate. they are combining themselves as one click. Squares need to be their own space.
   render() {
-    console.log('this is player change', this.state.playerMove)
+    console.log(this.state.value)
     return (
       <div>
         <div className="row">
-          <div data-cell="0"></div>
-          <div data-cell="1"></div>
-          <div data-cell="2"></div>
-        </div>
-        <button onClick={this.toggle}>test</button>
-        <div className="row">
-          <div data-cell="3"></div>
-          <div data-cell="4"></div>
-          <div data-cell="5"></div>
+          <div data-cell="0" onClick={this.toggle}> {this.state.value} </div> 
+          <div data-cell="1"> {this.state.value} </div>
+          <div data-cell="2"> {this.state.value} </div>
         </div>
         <div className="row">
-          <div data-cell="6"></div>
-          <div data-cell="7"></div>
-          <div data-cell="8"></div>
+          <div data-cell="3"> {this.state.value} </div>
+          <div data-cell="4"> {this.state.value} </div>
+          <div data-cell="5"> {this.state.value} </div>
+        </div>
+        <div className="row">
+          <div data-cell="6"> {this.state.value} </div>
+          <div data-cell="7"> {this.state.value} </div>
+          <div data-cell="8"> {this.state.value} </div>
         </div>
       </div>
     );
@@ -41,3 +42,5 @@ class TicTacToe extends React.Component {
 
 
 ReactDOM.render(<TicTacToe />, document.getElementById('tic-tac-toe'));
+
+// onClick=() => this.setState({value: 'X'})
