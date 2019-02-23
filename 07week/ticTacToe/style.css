@@ -1,18 +1,27 @@
-div[data-cell] {
+body {
+  margin: 0 auto;
+  width: 300px;
+  padding-top: 10%;
+}
+
+.announce {
+  width: 300px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.square {
   width: 100px;
   height: 100px;
   background-color: #f2f2f2;
   float: left;
   border: 1px solid #808080;
-  font-size: 100px;
+  font-size: 20px;
+  color: rgb(6, 6, 141);
   text-align: center;
+  outline: none;
 }
 
 .row {
   clear: both;
-}
-
-#announce-winner {
-  clear: both;
-  font-size: 50px;
 }
