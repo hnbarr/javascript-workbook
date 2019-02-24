@@ -1,17 +1,25 @@
 .App {
   text-align: center;
+  margin-top: 3%;
   /* color: red; */
 }
 
 .container {
+  margin: 0 auto;
   padding: 0 1rem;
+  width: 600px;
+  font-size: 20px;
+  border: 1px black dotted;
+  border-radius: 12px;
+  background-color: lightgray;
+  padding-bottom: 10px;
 }
 
 .btn {
   display: inline-block;
   border: none;
   background: #999;
-  color: '#fff';
+  color: #fff;
   padding: 7px 20px;
   cursor: pointer
 }
@@ -19,7 +27,7 @@
 .btn:hover{
   background: #666;
 }
-/* .input {
-  width: 200px;
+
+.input {
   outline: none;
-} */
+}

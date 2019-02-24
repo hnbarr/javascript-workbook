@@ -21,7 +21,7 @@ getStyle = () => {
           onChange={this.props.markComplete.bind(this, id)}/> 
           {' '}
           {title}
-          <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>x</button>
+          <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>Delete</button>
         </p>
       </div>
     )
@@ -37,10 +37,11 @@ const btnStyle = {
     backgroundColor: '#ff0000',
     color: 'white',
     border: 'none',
-    padding: '5px, 9px',
-    borderRadius: '50%',
+    padding: '9px',
+    borderRadius: '12px',
     cursor: 'pointer',
-    float: 'right'
+    float: 'right',
+    outline: 'none'
 }
 
 export default TodoItem

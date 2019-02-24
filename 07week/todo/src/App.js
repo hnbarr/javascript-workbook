@@ -6,23 +6,7 @@ import uuid from 'uuid';
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id: uuid.v4(),
-        title: "take out the trash",
-        completed: false
-      },
-      {
-        id: uuid.v4(),
-        title: "get groceries",
-        completed: false
-      },
-      {
-        id: uuid.v4(),
-        title: "dinner with wife",
-        completed: false
-      }
-    ]
+    todos: []
   }
 
   //toggle complete/not complete
