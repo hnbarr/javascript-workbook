@@ -3,7 +3,23 @@
   /* color: red; */
 }
 
-.input {
+.container {
+  padding: 0 1rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: #999;
+  color: '#fff';
+  padding: 7px 20px;
+  cursor: pointer
+}
+
+.btn:hover{
+  background: #666;
+}
+/* .input {
   width: 200px;
   outline: none;
-}
+} */
