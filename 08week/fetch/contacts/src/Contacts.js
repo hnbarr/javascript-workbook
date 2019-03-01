@@ -44,7 +44,7 @@ export class Contacts extends Component {
         <div>
             <Button outline color="secondary">Edit</Button>{' '}
             <Button outline color="success">Call</Button>{' '}
-            <Button outline color="info">Text</Button>{' '}
+            <Button outline color="info"> Text</Button>{' '}
             <Button outline color="warning">Email</Button>{' '}
         </div >
         <hr />

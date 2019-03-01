@@ -2,28 +2,28 @@
   text-align: center;
 }
 
-.jumbotron {
-  background-color: #EBEBEB !important;
-}
-
 body {
   background-image: url(./img/full-bloom.png)
 }
 
 .card {
+  margin:  0 auto;
   background-color: #EBEBEB !important;
+  width: 50%;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .bioPic {
   padding: 15px;
   margin: 0 auto;
-  width: 175px !important;
-  height: 175px !important;
+  width: 200px !important;
+  height: 200px !important;
   border-radius: 50% !important;
 }
 
 .top {
   padding: 15px;
+  color: rgb(22, 35, 35);
 }
 
 @keyframes App-logo-spin {
