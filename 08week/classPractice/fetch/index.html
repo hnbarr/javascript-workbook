@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fetch</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <script>
+    fetch('https://api.punkapi.com/v2/beers/random')
+      .then((response)=> response.json())
+      .then((data) => {
+      this.setState({
+        name: name
+      })
+    })
+  </script>
+</body>
+</html>
