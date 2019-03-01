@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Alert } from 'reactstrap';
+import  Header from './Header'
+import Contacts from './Contacts'
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-          <div className="jumbotron">
-          <h1>Test Test</h1>
-          <hr />
-          <p>test stuff here.  test test</p>
-          <p>another test test</p>
+      <div className="container">
+          <Header />
+          <div className="contacts">
+          <Contacts />
           </div>
       </div>
     );

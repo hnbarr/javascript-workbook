@@ -1,7 +1,30 @@
-.App {
+.container {
   text-align: center;
 }
 
+.jumbotron {
+  background-color: #EBEBEB !important;
+}
+
+body {
+  background-image: url(./img/full-bloom.png)
+}
+
+.card {
+  background-color: #EBEBEB !important;
+}
+
+.bioPic {
+  padding: 15px;
+  margin: 0 auto;
+  width: 175px !important;
+  height: 175px !important;
+  border-radius: 50% !important;
+}
+
+.top {
+  padding: 15px;
+}
 
 @keyframes App-logo-spin {
   from {
