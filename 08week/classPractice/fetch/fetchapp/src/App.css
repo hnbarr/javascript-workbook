@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   margin: 0 auto;
-  padding: 15px;
+  padding: 5px;
   font-size: 20px;
   color:  rgb(102, 100, 100);
 }
@@ -10,7 +10,7 @@
 img {
   width: 100px;
   max-height: 350px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .pairing{
@@ -18,10 +18,10 @@ img {
 }
 
 .container {
-  width: 400px;
+  width: 450px;
   background-color: darkgrey;
   border-radius: 12px;
-  padding: 10px;
+  padding: 5px;
   margin: 0 auto;
   margin-top: 20px;
   box-shadow: 2px 2px 3px 3px rgb(102, 100, 100);
