@@ -42,7 +42,6 @@ export class Contacts extends Component {
         <CardText>{this.state.num}</CardText>
         <CardText>{this.state.email}</CardText>
         <div>
-            <Button outline color="secondary">Edit</Button>{' '}
             <Button outline color="success">Call</Button>{' '}
             <Button outline color="info"> Text</Button>{' '}
             <Button outline color="warning">Email</Button>{' '}
@@ -52,6 +51,7 @@ export class Contacts extends Component {
         <hr />
         <div>
             <Button outline color="primary" onClick={() => this.refresh()}>Next Contact</Button>{' '}
+            <Button outline color="secondary">Edit</Button>{' '}
             <Button outline color="danger">Delete Contact</Button>
         </div>
         </CardBody>
