@@ -13,6 +13,6 @@ When starting this project, I was thinking of the gamne itself and what all make
 
 4. how to win the game, and what that looks like.
 
-5. and finally how to mut it all together! 
+5. and finally how to put it all together! 
 
 This was a fun assisngment and I really enjoy playing it in my terminal.
