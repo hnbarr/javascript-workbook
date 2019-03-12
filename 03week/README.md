@@ -5,7 +5,7 @@ I see it's worth 20 points of my grade, so I wanted to make sure I updated my pu
 
 When starting this project, I was thinking of the gamne itself and what all makes the game work. Things like;
 
-1. being able to move a block from stack to stack.
+1. being able to move a block from stack to stack, by selecting a, b or c.
 
 2. ONLY being able to move the last block in the stack.
 
