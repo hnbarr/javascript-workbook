@@ -1,15 +1,21 @@
 .container {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
     width: 50%;
-    background-color: #FBD8D6;
+    background-color: #FAE1E1;
     border-radius: 8px;
     border: 1px solid white;
     margin: 0 auto;
     margin-top: 10%;
-    padding: 15px;
+    padding: 25px;
 }
+
 body {
     background-image: url(./pig.jpg);
+}
+
+p {
+    font-size: 18px;
 }
 
 button, input {

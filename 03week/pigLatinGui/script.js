@@ -10,7 +10,7 @@ function input(){
   let newInput = document.createElement('input');
     newInput.setAttribute("id", 'item-text');
     document.getElementsByClassName('input')[0].after(newInput);
-    newInput.setAttribute("placeholder", "Type a word!");
+    newInput.setAttribute("placeholder", "Type a single word!");
   let submit = document.createElement('button');
     submit.setAttribute("id", 'button');
     document.getElementById('item-text').after(submit);
