@@ -1,0 +1,19 @@
+.container {
+    text-align: center;
+    width: 50%;
+    background-color: #FBD8D6;
+    border-radius: 8px;
+    border: 1px solid white;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 15px;
+}
+body {
+    background-image: url(./pig.jpg);
+}
+
+button, input {
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
