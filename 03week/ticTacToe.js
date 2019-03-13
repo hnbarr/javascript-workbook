@@ -6,6 +6,7 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+
 let board = [
   [' ', ' ', ' '],
   [' ', ' ', ' '],
@@ -13,6 +14,7 @@ let board = [
 ];
 
 let playerTurn = 'X';
+
 
 function printBoard() {
   console.log('   0  1  2');
@@ -23,24 +25,64 @@ function printBoard() {
   console.log('2 ' + board[2].join(' | '));
 }
 
-function horizontalWin() {
-  // Your code here
-}
+// board layout
+// 0-0|0-1|0-2
+// 1-0|1-1|1-2
+// 2-0|2-1|2-2
 
-function verticalWin() {
-  // Your code here
-}
+let horizontalWin = () => {
+  if(
+    (board[0][0] == playerTurn && board[0][1] == playerTurn && board[0][2] == playerTurn)||
+    (board[1][0] == playerTurn && board[1][1] == playerTurn && board[1][2] == playerTurn)||
+    (board[2][0] == playerTurn && board[2][1] == playerTurn && board[2][2] == playerTurn)
+  ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+let verticalWin = () => {
+  if(
+    (board[0][0] == playerTurn && board[1][0] == playerTurn && board[2][0] == playerTurn)||
+    (board[0][1] == playerTurn && board[1][1] == playerTurn && board[2][1] == playerTurn)||
+    (board[0][2] == playerTurn && board[1][2] == playerTurn && board[2][2] == playerTurn)
+  ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 function diagonalWin() {
-  // Your code here
+  if(
+    (board[0][0] == playerTurn && board[1][1] == playerTurn && board[2][2] == playerTurn)||
+    (board[0][2] == playerTurn && board[1][1] == playerTurn && board[2][0] == playerTurn)
+  ) {
+      return true;
+    } else {
+      return false;
+    }
 }
 
 function checkForWin() {
-  // Your code here
+  if ( horizontalWin() || verticalWin() || diagonalWin() ) { 
+    console.log(playerTurn + ", you won!"); 
+    return true;  
+  } else { 
+    console.log("Its a tie, no winners!");  
+    return false; 
+    }
 }
 
 function ticTacToe(row, column) {
-  // Your code here
+  board[row][column] = playerTurn
+  checkForWin();
+  if (playerTurn == 'X'){
+    playerTurn = 'O'
+  } else {
+    playerTurn = 'X'
+  }
 }
 
 function getPrompt() {
@@ -54,8 +96,6 @@ function getPrompt() {
   });
 
 }
-
-
 
 // Tests
 
