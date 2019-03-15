@@ -1,53 +1,89 @@
 'use strict';
+// updating homework as some questions have changed since my previous class
 
-// for loop
+let persons = [
+    {
+        firstName: "Heather",
+        lastName: "Barr",
+        birthDate: "Aug 09, 1994",
+        gender: "female"
+    },
+    {
+        firstName: "Chris",
+        lastName: "Smith",
+        birthDate: "Sep 26, 1989",
+        gender: "male"
+    },
+    {
+        firstName: "Taylor",
+        lastName: "Wills",
+        birthDate: "Feb 23, 1993",
+        gender: "female"
+    }
+]
 
-let carsInReverse = ['honda', 'jeep', 'ford', 'audi', 'chevrolet']
-
-for (let i = 0; i < carsInReverse.length; i++){
-    console.log(carsInReverse[i])
-}
-
-// for .. in loop
-
-let persons = {
-    firstName: "Jane",
-    lastName: "Doe",
-    birthDate: "Jan 5, 1925",
-    gender: "female"
-}
-
-for (var value in persons) {
-    console.log(value)
+//use a for...in loop and if state to console.log the value associated with the key birthDate, for odd years
+for (var obj in persons) {
+    if((persons[obj].birthDate.charAt(persons[obj].birthDate.length - 1) %2 != 0)){
+        console.log(persons[obj].birthDate, persons[obj].firstName)
+    }
   }
 
-// Then use a for...in loop and if state to console.log the value associated with the key birthDate
-    // need help with using an if for this problem.
-
-// for loop to console log 1-1000
-for(let i = 0; i <= 1000; i++){
-    console.log(i)
-}
-
-// Use a do...while loop to console.log the numbers from 1 to 1000.
+//use a do...while loop to console.log the numbers from 1 to 1000.
 let num = 0;
 do {
     num++;
     console.log(num);
-} while (num < 1000)
-
-// When is a for loop better than a while loop?
-/* I feel that a for loop is better when you're trying to keep the scope of variables under control. 
-If you're workign with a lot of global variables, a do/while loop may be better. */
+} while (num < 10) //change 10 to 1000 to run full. (I got tired of seeing 1000 numbers.)
 
 
-// How is the readability of the code affected?
-// not sure how to answer this? during what?
+let arrayOfPersons = [
+    {
+        firstName: "Jane",
+        lastName: "Doe",
+        birthDate: "Jan 05, 1925",
+        gender: "female"
+    },
+    {
+        firstName: "Heather",
+        lastName: "Barr",
+        birthDate: "Aug 09, 1994",
+        gender: "female"
+    },
+    {
+        firstName: "Chris",
+        lastName: "Smith",
+        birthDate: "Sep 26, 1989",
+        gender: "male"
+    },
+    {
+        firstName: "Taylor",
+        lastName: "Wills",
+        birthDate: "Feb 23, 1993",
+        gender: "female"
+    }
+]
+
+//Use .map() to map over the arrayOfPersons and console.log() their information.
+console.log("this is to see each object in the arrayOfPersons")
+arrayOfPersons.map(obj=> console.log(obj))
 
 
-// What is the difference between a for loop and a for...in loop?
-/*A for loop is better for arrays and a for/in loop is better for objects. It's better to use a for loop with 
-a numeric index when iterating over arrays, because the for/in statement iterates over user-defined properties.*/
+//Use .filter() to filter the persons array and console.log only males in the array.
+let boysOnly = arrayOfPersons.filter((obj) => {
+    return obj.gender === 'male'
+})
+console.log("this is to see whos gender is male")
+console.log(boysOnly)
 
-// What is the difference between a while loop and a do...while loop?
-/* A while loop will run as long as it evaluates to true, whereas a do/while loop will run until it evaluates to false!*/
+//Use .filter() to filter the persons array and console.log only people that were born before Jan 1, 1990.
+let elderly = arrayOfPersons.filter((obj) => {
+    if(obj.birthDate.charAt(obj.birthDate.length - 2) < 9){
+        return obj.firstName
+    }
+})
+console.log("this is to see who's born before 1990")
+console.log(elderly)
+
+
+//hi Dimh! 🍰
