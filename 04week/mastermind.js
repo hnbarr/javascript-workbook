@@ -31,7 +31,7 @@ function getRandomInt(min, max) {
 
 function generateHint(solution, guess) {
   let correctLetterLocations = 0; //red
-  let correctLetters = 0; //white
+  let correctLetters = 0; //whitesi
   let solutionArray = solution.split('');
   //this is to make each letter in the combination seperate to compare later!
   let guessArray = guess.split('');
@@ -57,12 +57,14 @@ function mastermind(guess) {
   if(counter >= 10){
     counter = 0
     console.log ('You ran out of turns! The solution was ' + solution)
-    // solution = generateSolution()
+    solution = ''
+    generateSolution()
     return 'You ran out of turns! The solution was ' + solution
   } else if(guess === solution){
     counter = 0
     console.log (colors.magenta('You guessed it!'))
-    // solution = generateSolution()
+    solution = ''
+    generateSolution()
     return "You guessed it!"
   } else {
     console.log (colors.green('Guess again.'))
