@@ -33,14 +33,16 @@ function generateHint(solution, guess) {
   let correctLetterLocations = 0; //red
   let correctLetters = 0; //white
   let solutionArray = solution.split('');
+  //this is to make each letter in the combination seperate to compare later!
   let guessArray = guess.split('');
+  // ditto
 
   for(let i = 0; i < 4; i++ ){
     if (solutionArray[i] === guessArray[i]){ // if one or more letters in same spot as solution
-      correctLetterLocations++
+      correctLetterLocations++ // this is to generate the number in our hint
       }
-    if(guessArray.indexOf(solutionArray[i]) > -1){ // if the matching letters match solution anywhere
-        correctLetters++
+    if(guessArray.indexOf(solutionArray[i]) > -1){ // if the matching letters match solution anywhere in array (index of will return positive number if present in array)
+        correctLetters++ //this is to show the number in our hint
       }
   }
   console.log(`Hint: ${(colors.red(correctLetterLocations))}-${(colors.white(correctLetters))}`)
@@ -48,14 +50,19 @@ function generateHint(solution, guess) {
 }
 
 function mastermind(guess) {
-  solution = 'abcd'
-  counter++
+  // solution = 'abcd' 
+  //uncomment above if you want the solution to be abcd for testing!
+  counter++ //to keep up with attempts
   console.log(colors.white("Number of guesses: " + counter))
   if(counter >= 10){
+    counter = 0
     console.log ('You ran out of turns! The solution was ' + solution)
+    // solution = generateSolution()
     return 'You ran out of turns! The solution was ' + solution
   } else if(guess === solution){
+    counter = 0
     console.log (colors.magenta('You guessed it!'))
+    // solution = generateSolution()
     return "You guessed it!"
   } else {
     console.log (colors.green('Guess again.'))
