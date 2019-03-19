@@ -46,7 +46,7 @@ function generateHint(solution, guess) {
       }
   }
   console.log(`Hint: ${(colors.red(correctLetterLocations))}-${(colors.white(correctLetters))}`)
-  return `${(colors.red(correctLetterLocations))}-${(colors.white(correctLetters))}`
+  return `${correctLetterLocations}-${correctLetters}`
 }
 
 function mastermind(guess) {
@@ -89,7 +89,7 @@ if (typeof describe === 'function') {
   describe('#mastermind()', () => {
     it('should register a guess and generate hints', () => {
       mastermind('aabb');
-      assert.equal(board.length, 1);
+      assert.equal(counter, 1);
     });
     it('should be able to detect a win', () => {
       assert.equal(mastermind(solution), 'You guessed it!');
