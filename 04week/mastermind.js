@@ -50,7 +50,7 @@ function generateHint(solution, guess) {
 }
 
 function mastermind(guess) {
-  // solution = 'abcd' 
+  solution = 'abcd' 
   //uncomment above if you want the solution to be abcd for testing!
   counter++ //to keep up with attempts
   console.log(colors.white("Number of guesses: " + counter))
