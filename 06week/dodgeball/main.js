@@ -82,16 +82,15 @@ const arrOfPeople = [
         this.teammates = []
     }
     
-    seeTeam() {
-     //to view team here, as its being built or anytime really!
-     //similar to the listOfPeople, below.
-    }
-  
+    // seeTeam() {
+      
+    // }
   }
 
   const broncos = new Team("Broncos", "Horse", "Blue")
   const raiders = new Team("Raiders", "Cowboy", "Red")
 
+// people list
   const listOfPeople = () => {
   const listElement = document.getElementById('people')
     arrOfPeople.map(person => {
@@ -104,15 +103,56 @@ const arrOfPeople = [
       listElement.append(li)
     })
   }
+
+// players list
+  const playerList = () => {
+  const playerlistElement = document.getElementById('players')
+    listOfPlayers.map(person => {
+      const li = document.createElement("li")
+      const button = document.createElement("button")
+      button.innerHTML = "Join the Broncos!"
+      //   button.addEventListener('click', function() { /* function here joinTeam */ } )
+      li.appendChild(button)
+      li.appendChild(document.createTextNode(person.name))
+      playerlistElement.append(li)
+      })
+  }
+
+// broncos list
+  const broncosList = () => {
+  const broncolistElement = document.getElementById('blue')
+    broncos.map(person => {
+      const li = document.createElement("li")
+      const button = document.createElement("button")
+      //   button.innerHTML = "Delete Player"
+      //   button.addEventListener('click', function() { /* new function here deletePlayer */ } )
+      li.appendChild(button)
+      li.appendChild(document.createTextNode(person.name))
+      broncolistElement.append(li)
+    })
+  }
+
+// raiders list
+  const raidersList = () => {
+  const raiderslistElement = document.getElementById('red')
+    raiders.map(person => {
+      const li = document.createElement("li")
+      const button = document.createElement("button")
+      //   button.innerHTML = "Delete Player"
+      //   button.addEventListener('click', function() { /* new function here deletePlayer */ } )
+      li.appendChild(button)
+      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
+      raiderslistElement.append(li)
+    })
+  }
+
   const makePlayer = (id) => {
     console.log(`li ${id} was clicked!`)
-    //need to be able to remove from arrofpeople and move to listOfplayers arr.
-    console.log(id) //index will be id - 2
-    listOfPlayers.push(arrOfPeople[id - 2]) //undefined, but adding new  value into arr per click. kindof working
-    arrOfPeople.slice(arrOfPeople[id - 2], 1) //not removing people from arr.
+    listOfPlayers.push(arrOfPeople[id - 2]) //working, adding clicked li to new array, listofplayers.
+    arrOfPeople.splice(arrOfPeople[id - 2], 1) //not removing people from arr.
     console.log(arrOfPeople)
     console.log(listOfPlayers)
-    // console.log(arrOfPeople[0])
+    console.log(arrOfPeople[0])
     
   }
 

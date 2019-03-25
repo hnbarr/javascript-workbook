@@ -19,3 +19,13 @@ Use the this keyword to assign each player to a team with an onclick. Either Blu
 
 Display the two teams in a new list in the DOM with appropriate titles.
 Create 3 tests for your application.
+
+
+broken down; 
+I need to be able to make People into Players, adn then display then in the different sections in my html
+
+Need to be able to pick a team for each player to join, inside players section. red btn & blue btn?
+
+need to be able to join both successfully with nice looking GUI
+
+create three unit tests. 
