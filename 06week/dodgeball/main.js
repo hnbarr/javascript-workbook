@@ -81,16 +81,12 @@ const arrOfPeople = [
         this.teamColor = teamColor,
         this.teammates = []
     }
-    
-    // seeTeam() {
-      
-    // }
   }
 
   const broncos = new Team("Broncos", "Horse", "Blue")
   const raiders = new Team("Raiders", "Cowboy", "Red")
 
-// people list
+// see the people list
   const listOfPeople = () => {
   const listElement = document.getElementById('people')
     arrOfPeople.map(person => {
@@ -104,21 +100,21 @@ const arrOfPeople = [
     })
   }
 
-// players list
+// see the players list
   const playerList = () => {
   const playerlistElement = document.getElementById('players')
-    listOfPlayers.map(person => {
+    listOfPlayers.map(player => {
       const li = document.createElement("li")
       const button = document.createElement("button")
-      button.innerHTML = "Join the Broncos!"
+      button.innerHTML = "Join a Team!"
       //   button.addEventListener('click', function() { /* function here joinTeam */ } )
       li.appendChild(button)
-      li.appendChild(document.createTextNode(person.name))
+      li.appendChild(document.createTextNode(player.name))
       playerlistElement.append(li)
       })
   }
 
-// broncos list
+// see the broncos list
   const broncosList = () => {
   const broncolistElement = document.getElementById('blue')
     broncos.map(person => {
@@ -132,7 +128,7 @@ const arrOfPeople = [
     })
   }
 
-// raiders list
+// see the raiders list
   const raidersList = () => {
   const raiderslistElement = document.getElementById('red')
     raiders.map(person => {
@@ -149,10 +145,10 @@ const arrOfPeople = [
   const makePlayer = (id) => {
     console.log(`li ${id} was clicked!`)
     listOfPlayers.push(arrOfPeople[id - 2]) //working, adding clicked li to new array, listofplayers.
-    arrOfPeople.splice(arrOfPeople[id - 2], 1) //not removing people from arr.
+    arrOfPeople.splice(arrOfPeople[id - 2], 1) //working removal of person in array.
     console.log(arrOfPeople)
     console.log(listOfPlayers)
-    console.log(arrOfPeople[0])
+    // console.log(arrOfPeople[0])
     
   }
 
