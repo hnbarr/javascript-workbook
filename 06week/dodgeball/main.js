@@ -65,8 +65,23 @@ const arrOfPeople = [
         this.placeBord = placeBorn,
         this.team = null
     }
+
     //methods here
+    // showPlayers(){
+    //     const playerlistElement = document.getElementById('players')
+    //     listOfPlayers.map(player => {
+    //       const li = document.createElement("li")
+    //       const button = document.createElement("button")
+    //       button.innerHTML = "Join a Team!"
+    //       //   button.addEventListener('click', function() { /* function here joinTeam */ } )
+    //       li.appendChild(button)
+    //       li.appendChild(document.createTextNode(player.name))
+    //       playerlistElement.append(li)
+    //       })
+    // }
+
     joinTeam(teamName) {
+        console.log(this)
         this.teamName = teamName
         teamName.teammates.push(this)
         //need to remove from arrOfPeople arr, after pushing to new arr, players
@@ -81,11 +96,17 @@ const arrOfPeople = [
         this.teamColor = teamColor,
         this.teammates = []
     }
+
+    // methods here
+    removePlayer(){
+
+    }
+
   }
 
   const broncos = new Team("Broncos", "Horse", "Blue")
   const raiders = new Team("Raiders", "Cowboy", "Red")
-
+  
 // see the people list
   const listOfPeople = () => {
   const listElement = document.getElementById('people')
@@ -100,77 +121,58 @@ const arrOfPeople = [
     })
   }
 
-// see the players list
-  const playerList = () => {
-  const playerlistElement = document.getElementById('players')
-    listOfPlayers.map(player => {
-      const li = document.createElement("li")
-      const button = document.createElement("button")
-      button.innerHTML = "Join a Team!"
-      //   button.addEventListener('click', function() { /* function here joinTeam */ } )
-      li.appendChild(button)
-      li.appendChild(document.createTextNode(player.name))
-      playerlistElement.append(li)
-      })
-  }
-
-// see the broncos list
-  const broncosList = () => {
-  const broncolistElement = document.getElementById('blue')
-    broncos.map(person => {
-      const li = document.createElement("li")
-      const button = document.createElement("button")
-      //   button.innerHTML = "Delete Player"
-      //   button.addEventListener('click', function() { /* new function here deletePlayer */ } )
-      li.appendChild(button)
-      li.appendChild(document.createTextNode(person.name))
-      broncolistElement.append(li)
-    })
-  }
-
-// see the raiders list
-  const raidersList = () => {
-  const raiderslistElement = document.getElementById('red')
-    raiders.map(person => {
-      const li = document.createElement("li")
-      const button = document.createElement("button")
-      //   button.innerHTML = "Delete Player"
-      //   button.addEventListener('click', function() { /* new function here deletePlayer */ } )
-      li.appendChild(button)
-      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
-      raiderslistElement.append(li)
-    })
-  }
-
   const makePlayer = (id) => {
     console.log(`li ${id} was clicked!`)
     listOfPlayers.push(arrOfPeople[id - 2]) //working, adding clicked li to new array, listofplayers.
     arrOfPeople.splice(arrOfPeople[id - 2], 1) //working removal of person in array.
     console.log(arrOfPeople)
     console.log(listOfPlayers)
+    console.log(id)
     // console.log(arrOfPeople[0])
-    
+    // let updateList = ()=> {
+    //     return arrOfPeople
+    //   }
+    // updateList()
   }
 
-//idk if i need these?
+// see the players list
+  const playerList = () => {
+    const playerlistElement = document.getElementById('players')
+        listOfPlayers.map(player => {
+          const li = document.createElement("li")
+          const button = document.createElement("button")
+          button.innerHTML = "Join a Team!"
+          //   button.addEventListener('click', function() { /* function here joinTeam */ } )
+          li.appendChild(button)
+          li.appendChild(document.createTextNode(player.name))
+          playerlistElement.append(li)
+          })
+  }
 
-//   const playersNeedingTeams = () => {
-//     listOfPlayers.map(person => {
-//         const li = document.createElement("li")
-//         const redBtn = document.createElement("button")
-//         button.innerHTML = "Raiders- Red Team"
-//         button.addEventListener('click', function() {joinTeam(teamName)} )
-//         li.appendChild(redBtn)
-//         li.appendChild(document.createTextNode(person.name))
-//         listElement.append(li)
+// // see the broncos list
+//   const broncosList = () => {
+//   const broncolistElement = document.getElementById('blue')
+//     broncos.map(person => {
+//       const li = document.createElement("li")
+//       const button = document.createElement("button")
+//       //   button.innerHTML = "Delete Player"
+//       //   button.addEventListener('click', function() { /* new function here deletePlayer */ } )
+//       li.appendChild(button)
+//       li.appendChild(document.createTextNode(person.name))
+//       broncolistElement.append(li)
+//     })
+//   }
 
-//         //
-
-//         const blueBtn = document.createElement("button")
-//         button.innerHTML = "Broncos- Blue Team"
-//         button.addEventListener('click', function() {joinTeam(teamName)} )
-//         li.appendChild(blueBtn)
-//         li.appendChild(document.createTextNode(person.name))
-//         listElement.append(li)
-//       })
+// // see the raiders list
+//   const raidersList = () => {
+//   const raiderslistElement = document.getElementById('red')
+//     raiders.map(person => {
+//       const li = document.createElement("li")
+//       const button = document.createElement("button")
+//       //   button.innerHTML = "Delete Player"
+//       //   button.addEventListener('click', function() { /* new function here deletePlayer */ } )
+//       li.appendChild(button)
+//       li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
+//       raiderslistElement.append(li)
+//     })
 //   }
