@@ -64,7 +64,7 @@ class Board {
       [0, 1], [0, 3], [0, 5], [0, 7],
       [1, 0], [1, 2], [1, 4], [1, 6],
       [2, 1], [2, 3], [2, 5], [2, 7]
-    ]
+    ] //this creates all the white spots on the borad at start and reset.
     for (let i = 0; i < 12; i++){
       let whiteRow = whitePositions[i][0];
       let whiteColumn = whitePositions[i][1];
@@ -77,7 +77,7 @@ class Board {
       [5, 0], [5, 2], [5, 4], [5, 6],
       [6, 1], [6, 3], [6, 5], [6, 7],
       [7, 0], [7, 2], [7, 4], [7, 6]
-    ]
+    ] //this creates the black spots on the board at start and reset.
     for(let i = 0; i < 12; i++){
       let blackRow = blackPositions[i][0];
       let blackColumn = blackPositions[i][1];
