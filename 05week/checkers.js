@@ -9,7 +9,9 @@ const rl = readline.createInterface({
 
 class Checker {
   constructor(color){
-    color === 'white' ? this.symbol = String.fromCharCode(0x125CB) : this.symbol = String.fromCharCode(0x125CF);
+    let w = String.fromCharCode(0x125CB)
+    let b = String.fromCharCode(0x125CF)
+    color === 'white' ? this.symbol = w : this.symbol = b;
     //made into ternary 
   }
 }
@@ -24,14 +26,14 @@ class Board {
     // loop to create the 8 rows
     for (let row = 0; row < 8; row++) {
       this.grid[row] = [];
-      // push in 8 columns of nulls
+      // loop to create columns and push null values into each spot on grid/board
       for (let column = 0; column < 8; column++) {
         this.grid[row].push(null);
       }
     }
   }
   viewGrid() {
-    // add our column numbers
+    // add our column numbers, for guidance
     let string = "  0 1 2 3 4 5 6 7\n";
     for (let row = 0; row < 8; row++) {
       // we start with our row number in our array
@@ -61,7 +63,8 @@ class Board {
       [0, 1], [0, 3], [0, 5], [0, 7],
       [1, 0], [1, 2], [1, 4], [1, 6],
       [2, 1], [2, 3], [2, 5], [2, 7]
-    ] //this creates all the white spots on the borad at start and reset.
+    ] //this creates all the white spots on the borad at start and new game.
+
     for (let i = 0; i < 12; i++){
       let whiteRow = whitePositions[i][0];
       let whiteColumn = whitePositions[i][1];
@@ -74,7 +77,8 @@ class Board {
       [5, 0], [5, 2], [5, 4], [5, 6],
       [6, 1], [6, 3], [6, 5], [6, 7],
       [7, 0], [7, 2], [7, 4], [7, 6]
-    ] //this creates the black spots on the board at start and reset.
+    ] //this creates the black spots on the board at start and new game.
+
     for(let i = 0; i < 12; i++){
       let blackRow = blackPositions[i][0];
       let blackColumn = blackPositions[i][1];
@@ -106,21 +110,42 @@ class Game {
     let endColumn = parseInt(end.charAt(1))
     console.log('endRow:', endRow, 'endColumn:', endColumn)
 
-    this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn];
-    this.board.grid[startRow][startColumn] = null; //takes away  fromfirst  spot, bc it was moved
+    this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn]; //moves the checker to end
+    this.board.grid[startRow][startColumn] = null; //takes away  from first  spot, bc it was moved to end
     
+    // jumping an enemy checker.
     if(Math.abs(endRow - startRow) === 2){
       this.board.killChecker();
       let midpointRow = ((startRow + endRow)/2)
       let midpointColumn = ((startColumn + endColumn)/2)
-      let killPoint = [midpointRow, midpointColumn]
-      // console.log(midpointRow, midpointColumn, killPoint)
       this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
-      this.board.checkers.length--
+      this.board.checkers.length-- //takes away one value from length.
+      console.log(this.board.checkers.length)
+
+///// left off here! Trying to access the symbol/color so I can make win condition. Need to be able to get the length of the last standing color to determine winner.
+      let killPoint = [midpointRow, midpointColumn]
+      console.log(killPoint)
+
+      let newSpot = this.board.grid[endRow][endColumn]
+      console.log(newSpot.symbol === String.fromCharCode(0x125CF)) //true
+      // console.log(this.board.checkers)
+
+      // code stops working here..
+
+      let jumpedWhite = 0
+      let jumpedBlack = 0
+      if(this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CF)){
+        jumpedBlack++ //not working
+      } else if(this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CB)){
+        jumpedWhite++ //not working
+      }
+      console.log(jumpedWhite, jumpedBlack)
     }
-    // 50-41, 23-32, 41-23
+    
+    // 50-41, 23-32, 41-23 (to test a move)
   }
 }
+
 
 function getPrompt() {
   game.board.viewGrid();
@@ -166,3 +191,6 @@ if (typeof describe === 'function') {
 } else {
   getPrompt();
 }
+
+
+//possibly un-needed code
