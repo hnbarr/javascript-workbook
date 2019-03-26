@@ -104,11 +104,11 @@ class Game {
   moveChecker(start, end) {
     let startRow = parseInt(start.charAt(0))
     let startColumn = parseInt(start.charAt(1))
-    console.log('startRow:', startRow, 'startColumn:', startColumn)
+    // console.log('startRow:', startRow, 'startColumn:', startColumn)
 
     let endRow = parseInt(end.charAt(0))
     let endColumn = parseInt(end.charAt(1))
-    console.log('endRow:', endRow, 'endColumn:', endColumn)
+    // console.log('endRow:', endRow, 'endColumn:', endColumn)
 
     this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn]; //moves the checker to end
     this.board.grid[startRow][startColumn] = null; //takes away  from first  spot, bc it was moved to end
@@ -118,30 +118,25 @@ class Game {
       this.board.killChecker();
       let midpointRow = ((startRow + endRow)/2)
       let midpointColumn = ((startColumn + endColumn)/2)
-      this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
-      this.board.checkers.length-- //takes away one value from length.
-      console.log(this.board.checkers.length)
-
-///// left off here! Trying to access the symbol/color so I can make win condition. Need to be able to get the length of the last standing color to determine winner.
-      let killPoint = [midpointRow, midpointColumn]
-      console.log(killPoint)
-
-      let newSpot = this.board.grid[endRow][endColumn]
-      console.log(newSpot.symbol === String.fromCharCode(0x125CF)) //true
-      // console.log(this.board.checkers)
-
-      // code stops working here..
-
-      let jumpedWhite = 0
+    // to keep track of jumped chips
+      let jumpedWhite = 0 
       let jumpedBlack = 0
-      if(this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CF)){
-        jumpedBlack++ //not working
-      } else if(this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CB)){
-        jumpedWhite++ //not working
+      
+      if(this.board.grid[midpointRow][midpointColumn] !== null){
+        if(this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CB)){
+          jumpedWhite ++
+          console.log(`jumped white chips = ${jumpedWhite}`)
+          this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
+          this.board.checkers.length-- //takes away one value from length.
+        } else if (this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CF)){
+          jumpedBlack ++
+          console.log(`jumped black chips = ${jumpedBlack}`)
+          this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
+          this.board.checkers.length-- //takes away one value from length.
+        } 
+        console.log(`total checkers left; ${this.board.checkers.length}`)
       }
-      console.log(jumpedWhite, jumpedBlack)
     }
-    
     // 50-41, 23-32, 41-23 (to test a move)
   }
 }
