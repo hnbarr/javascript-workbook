@@ -9,11 +9,8 @@ const rl = readline.createInterface({
 
 class Checker {
   constructor(color){
-    if(color === 'white'){
-      this.symbol = String.fromCharCode(0x125CB);
-    } else {
-      this.symbol = String.fromCharCode(0x125CF);
-    }
+    color === 'white' ? this.symbol = String.fromCharCode(0x125CB) : this.symbol = String.fromCharCode(0x125CF);
+    //made into ternary 
   }
 }
 
