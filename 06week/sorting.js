@@ -101,3 +101,5 @@ const idealTemp = weather.find(temp => { //looking for temps here, so I used the
   }).id; //this returns the id number once found the temp were looking for
 
 console.log("the temp we want can be found here ", idealTemp)
+
+// have to update push, typo.
