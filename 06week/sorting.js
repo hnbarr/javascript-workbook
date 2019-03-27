@@ -16,9 +16,11 @@ const sumEvens = nums.reduce((acc, num) => {
 console.log(sumEvens);
 
 // Find the index of the first value when added to it's index = 512 (#ATX!!)
-// const atxIdx;
+const atxIdx = nums.findIndex((num, i) => {
+    return num + i === 512
+})
+console.log(`index: ${atxIdx}, value: ${nums[atxIdx]}`);
 
-// console.log(`index: ${atxIdx}, value: ${nums[atxIdx]}`);
 
 const weather = [
   { id: 5743823523151872,
