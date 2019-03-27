@@ -16,9 +16,7 @@ const sumEvens = nums.reduce((acc, num) => {
 console.log(sumEvens);
 
 // Find the index of the first value when added to it's index = 512 (#ATX!!)
-const atxIdx = nums.findIndex((num, i) => {
-    return num + i === 512
-})
+const atxIdx = nums.findIndex((num, i) => num + i === 512)
 console.log(`index: ${atxIdx}, value: ${nums[atxIdx]}`);
 
 
@@ -90,10 +88,12 @@ const weather = [
 ]
 
 //using a higher order function, create an array of the unique 'weather_state_name' values of the weather array. Your function should return the following array ['Light Cloud', 'Heavy Cloud', 'Showers']
-// const weatherStates = 
-// console.log(weatherStates)
+const weatherStates = weather.map(eachObj =>{  //used eachObj, bc were looking through each object inside weather array
+    const forecast = eachObj.weather_state_name  //forecast === key:weather_state_name
+    return forecast;
+ });
+console.log("weather states = ", weatherStates)
+
 
 //find the id of the object in weather that has a min_temp of 15.915
 
-// const idealTemp =
-// console.log(idealTemp)
