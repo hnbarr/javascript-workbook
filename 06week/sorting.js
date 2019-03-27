@@ -96,8 +96,8 @@ console.log("weather states = ", weatherStates)
 
 
 //find the id of the object in weather that has a min_temp of 15.915
-const idealTemp = weather.find(temp => { //looking for temps here
-  return temp.min_temp === 15.915 //more specific, the min temp
+const idealTemp = weather.find(temp => { //looking for temps here, so I used the work temp
+  return temp.min_temp === 15.915 //more specific, the min temp we're tryimng to find
   }).id; //this returns the id number once found the temp were looking for
 
 console.log("the temp we want can be found here ", idealTemp)
