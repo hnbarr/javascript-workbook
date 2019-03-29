@@ -102,26 +102,18 @@ class Game {
       console.log("I took away one of your chips!")
       let midpointRow = ((startRow + endRow)/2)
       let midpointColumn = ((startColumn + endColumn)/2)
-      let jumpedWhite = 0
-      let jumpedBlack = 0
     
       if(this.board.grid[midpointRow][midpointColumn] !== null){
         if(this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CB)){
-          jumpedWhite++ //only adding on first jump, need to fix!
-          console.log(`jumped white chips = ${jumpedWhite}`)
           this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
           this.board.checkers.length-- //takes away one value from length.
         } else if (this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CF)){
-          jumpedBlack++ //only adding on first jump, need to fix!
-          console.log(`jumped black chips = ${jumpedBlack}`)
           this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
           this.board.checkers.length-- //takes away one value from length.
         } 
-        console.log(`total checkers left; ${this.board.checkers.length}`)
-        return false
+        console.log(`total checkers left = ${this.board.checkers.length}`)
       }
     }
-    // 50-41, 23-32, 41-23 (to test a move)
   }
 }
 
@@ -131,6 +123,7 @@ function getPrompt() {
   rl.question('which piece?: ', (whichPiece) => {
     rl.question('to where?: ', (toWhere) => {
       game.moveChecker(whichPiece, toWhere);
+      
       getPrompt();
     });
   });
@@ -173,3 +166,10 @@ if (typeof describe === 'function') {
 
 
 //possibly un-needed code
+// let jumpedWhite = 0
+// let jumpedBlack = 0
+// jumpedWhite++ //only adding on first jump, need to fix!
+// console.log(`jumped white chips = ${jumpedWhite}`)
+// jumpedBlack++ //only adding on first jump, need to fix!
+// console.log(`jumped black chips = ${jumpedBlack}`)
+// `total black checkers taken; ${jumpedBlack}, total white checkers taken; ${jumpedWhite}`
