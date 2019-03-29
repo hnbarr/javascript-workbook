@@ -101,37 +101,43 @@ class Game {
       if(startRow < 8 && startColumn <8 && endRow < 8 && endColumn <8){
         this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn]; //moves the checker & takes away from first spot
         this.board.grid[startRow][startColumn] = null;
-    
-      if(Math.abs(endRow - startRow) === 2){ // if making a jump...
-        console.log("I took away one of your chips!")
-        let midpointRow = ((startRow + endRow)/2)
-        let midpointColumn = ((startColumn + endColumn)/2)
-    
-      if(this.board.grid[midpointRow][midpointColumn] !== null){
-        if(this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CB)){
-          this.board.jumpedWhite.push(this.board.grid[midpointRow][midpointColumn])
-          this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
-          this.board.checkers.length-- //takes away one value from length.
-          console.log(`jumped white chips = ${this.board.jumpedWhite.length}`)
-        } else if (this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CF)){
-          this.board.jumpedBlack.push(this.board.grid[midpointRow][midpointColumn])
-          this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
-          this.board.checkers.length-- //takes away one value from length.
-          console.log(`jumped black chips = ${this.board.jumpedBlack.length}`)
-
-        } 
-        console.log(`total checkers left = ${this.board.checkers.length}`)
+        //valid move is okay, heres to make a jump
+        if(Math.abs(endRow - startRow) === 2){ // if making a jump...
+          console.log(colors.magenta("One Chip Was Remmoved!"))
+          let midpointRow = ((startRow + endRow)/2)
+          let midpointColumn = ((startColumn + endColumn)/2)
+          if(this.board.grid[midpointRow][midpointColumn] !== null){
+            if(this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CB)){
+              this.board.jumpedWhite.push(this.board.grid[midpointRow][midpointColumn])
+              this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
+              this.board.checkers.length-- //takes away one value from length.  
+            } else if (this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CF)){
+              this.board.jumpedBlack.push(this.board.grid[midpointRow][midpointColumn])
+              this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
+              this.board.checkers.length-- //takes away one value from length.
+            } 
+          }
         }
-      }
-
       } else {
-        console.log('Sorry, please input a valid input like 52 (5 for 5th row & 2 for 2nd column)')
+        console.log(colors.magenta('Please use valid input; 52 (5 for 5th down & 2 for 2nd over)'))
         return false
       }
-    } //checkValid
+      console.log(colors.green(`removed white chips = ${this.board.jumpedWhite.length}`))
+      console.log(colors.red(`removed black chips = ${this.board.jumpedBlack.length}`))
+      // console.log(`Checkers On Board = ${this.board.checkers.length}`)
+    } 
     checkValid()
-  }//moveChecker
-}//game
+
+    let checkForWin = () => {
+      if(this.board.jumpedBlack.length > 11){ //can change to 1 for faster testing
+        console.log(`Game Over! The winner is White!`)
+      } else if(this.board.jumpedWhite.length > 11){
+        console.log(`Game Over! The winner is Black!`)
+      }
+    }
+    checkForWin()
+  }
+}
 
 
 function getPrompt() {
