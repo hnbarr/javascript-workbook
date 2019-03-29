@@ -181,10 +181,3 @@ if (typeof describe === 'function') {
 
 
 //possibly un-needed code
-// let jumpedWhite = 0
-// let jumpedBlack = 0
-// jumpedWhite++ //only adding on first jump, need to fix!
-// console.log(`jumped white chips = ${jumpedWhite}`)
-// jumpedBlack++ //only adding on first jump, need to fix!
-// console.log(`jumped black chips = ${jumpedBlack}`)
-// `total black checkers taken; ${jumpedBlack}, total white checkers taken; ${jumpedWhite}`
