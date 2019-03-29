@@ -20,6 +20,8 @@ class Board {
   constructor() {
     this.grid = []
     this.checkers = []
+    this.jumpedBlack = []
+    this.jumpedWhite = []
   }
   // method that creates an 8x8 array, filled with null values
   createGrid() {
@@ -95,36 +97,49 @@ class Game {
     let endRow = parseInt(end.charAt(0))
     let endColumn = parseInt(end.charAt(1)) // console.log('endRow:', endRow, 'endColumn:', endColumn)
     
-    this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn]; //moves the checker & takes away from first spot
-    this.board.grid[startRow][startColumn] = null;
+    let checkValid = () => {
+      if(startRow < 8 && startColumn <8 && endRow < 8 && endColumn <8){
+        this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn]; //moves the checker & takes away from first spot
+        this.board.grid[startRow][startColumn] = null;
     
-    if(Math.abs(endRow - startRow) === 2){ // if making a jump...
-      console.log("I took away one of your chips!")
-      let midpointRow = ((startRow + endRow)/2)
-      let midpointColumn = ((startColumn + endColumn)/2)
+      if(Math.abs(endRow - startRow) === 2){ // if making a jump...
+        console.log("I took away one of your chips!")
+        let midpointRow = ((startRow + endRow)/2)
+        let midpointColumn = ((startColumn + endColumn)/2)
     
       if(this.board.grid[midpointRow][midpointColumn] !== null){
         if(this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CB)){
+          this.board.jumpedWhite.push(this.board.grid[midpointRow][midpointColumn])
           this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
           this.board.checkers.length-- //takes away one value from length.
+          console.log(`jumped white chips = ${this.board.jumpedWhite.length}`)
         } else if (this.board.grid[midpointRow][midpointColumn].symbol === String.fromCharCode(0x125CF)){
+          this.board.jumpedBlack.push(this.board.grid[midpointRow][midpointColumn])
           this.board.grid[midpointRow][midpointColumn] = null //takes away jumped checker
           this.board.checkers.length-- //takes away one value from length.
+          console.log(`jumped black chips = ${this.board.jumpedBlack.length}`)
+
         } 
         console.log(`total checkers left = ${this.board.checkers.length}`)
+        }
       }
-    }
-  }
-}
+
+      } else {
+        console.log('Sorry, please input a valid input like 52 (5 for 5th row & 2 for 2nd column)')
+        return false
+      }
+    } //checkValid
+    checkValid()
+  }//moveChecker
+}//game
 
 
 function getPrompt() {
   game.board.viewGrid();
   rl.question('which piece?: ', (whichPiece) => {
     rl.question('to where?: ', (toWhere) => {
-      game.moveChecker(whichPiece, toWhere);
-      
-      getPrompt();
+        game.moveChecker(whichPiece, toWhere);
+        getPrompt();
     });
   });
 }
