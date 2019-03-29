@@ -129,10 +129,18 @@ class Game {
     checkValid()
 
     let checkForWin = () => {
-      if(this.board.jumpedBlack.length > 11){ //can change to 1 for faster testing
-        console.log(`Game Over! The winner is White!`)
-      } else if(this.board.jumpedWhite.length > 11){
-        console.log(`Game Over! The winner is Black!`)
+      if(this.board.jumpedBlack.length > 1){ //can change to 1 for faster testing
+        console.log(`Game Over! The winner is White! Let's Restart`)
+        game.start()
+        this.board.checkers.length = 24
+        this.board.jumpedBlack.length = 0
+        this.board.jumpedWhite.length = 0
+      } else if(this.board.jumpedWhite.length > 1){
+        console.log(`Game Over! The winner is Black! Let's Restart!`)
+        game.start()
+        this.board.checkers.length = 24
+        this.board.jumpedBlack.length = 0
+        this.board.jumpedWhite.length = 0
       }
     }
     checkForWin()
