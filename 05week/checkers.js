@@ -86,6 +86,7 @@ class Board {
 class Game {
   constructor() {
     this.board = new Board;
+    this.counter = 0
   }
   start() {
     this.board.createGrid();
@@ -96,12 +97,14 @@ class Game {
     let startColumn = parseInt(start.charAt(1)) // console.log('startRow:', startRow, 'startColumn:', startColumn)
     let endRow = parseInt(end.charAt(0))
     let endColumn = parseInt(end.charAt(1)) // console.log('endRow:', endRow, 'endColumn:', endColumn)
-    
+
     let checkValid = () => {
       if(startRow < 8 && startColumn <8 && endRow < 8 && endColumn <8){
         this.board.grid[endRow][endColumn] = this.board.grid[startRow][startColumn]; //moves the checker & takes away from first spot
         this.board.grid[startRow][startColumn] = null;
+        this.counter ++
         //valid move is okay, heres to make a jump
+
         if(Math.abs(endRow - startRow) === 2){ // if making a jump...
           console.log(colors.magenta("One Chip Was Remmoved!"))
           let midpointRow = ((startRow + endRow)/2)
@@ -124,18 +127,17 @@ class Game {
       }
       console.log(colors.green(`removed white chips = ${this.board.jumpedWhite.length}`))
       console.log(colors.red(`removed black chips = ${this.board.jumpedBlack.length}`))
-      // console.log(`Checkers On Board = ${this.board.checkers.length}`)
     } 
     checkValid()
 
     let checkForWin = () => {
-      if(this.board.jumpedBlack.length > 1){ //can change to 1 for faster testing
+      if(this.board.jumpedBlack.length > 11){ //can change to 1 for faster testing
         console.log(`Game Over! The winner is White! Let's Restart`)
         game.start()
         this.board.checkers.length = 24
         this.board.jumpedBlack.length = 0
         this.board.jumpedWhite.length = 0
-      } else if(this.board.jumpedWhite.length > 1){
+      } else if(this.board.jumpedWhite.length > 11){
         console.log(`Game Over! The winner is Black! Let's Restart!`)
         game.start()
         this.board.checkers.length = 24
