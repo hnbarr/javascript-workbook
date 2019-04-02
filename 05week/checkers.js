@@ -122,7 +122,7 @@ class Game {
           }
         }
       } else {
-        console.log(colors.magenta('Please use valid input; 52 (5 for 5th down & 2 for 2nd over)'))
+        console.log(colors.magenta('Please use valid input; 52 (match 5 down and 2 over)'))
         return false
       }
       console.log(colors.green(`removed white chips = ${this.board.jumpedWhite.length}`))
