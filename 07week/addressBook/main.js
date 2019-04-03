@@ -8,17 +8,17 @@ function getContact(){
     .then((res)=> res.json())
     .then((data)=> {
         console.log(data.results)
-        let output = '<h2> Hello, Friends </h2>'
+        let output = ''
         data.results.forEach((contact)=> {
             output += `
             <ul>
-                <img src='${contact.picture.thumbnail}'> 
-                <li> name: ${contact.name.first} ${contact.name.last} </li>
-                <li> city: ${contact.location.city} </li>
-                <li> phone number: ${contact.phone} </li>
+                <img src='${contact.picture.large}'> 
+                <li> Name: ${contact.name.first} ${contact.name.last} </li>
+                <li> City: ${contact.location.city} </li>
+                <li> Number ${contact.phone} </li>
             </ul>
             `
         })
         display.innerHTML = output;
-    })
+    }).catch((err)=> console.log(err))
 }

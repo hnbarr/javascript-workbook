@@ -2,9 +2,28 @@
     width: 75%;
     background-color: whitesmoke;
     margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid #D5D5D5;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    list-style-type: none;
 }
 
 #next {
+    display: flex;
     padding: 5px;
     margin: 0 auto;
     border-radius: 8px;
@@ -12,5 +31,10 @@
 }
 
 body {
-    background-image: url(./circuit.png)
+    background-image: url(./circuit.png);
+    margin-top: 5%;
+}
+
+img {
+    border-radius: 50%;
 }
