@@ -1,0 +1,16 @@
+#container {
+    width: 75%;
+    background-color: whitesmoke;
+    margin: 0 auto;
+}
+
+#next {
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 8px;
+    outline: none;
+}
+
+body {
+    background-image: url(./circuit.png)
+}
