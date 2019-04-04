@@ -87,6 +87,7 @@ const arrOfPeople = [
   
 // see the people list
   const listOfPeople = () => {
+  document.getElementById('firstList').remove(this)
   const listElement = document.getElementById('people')
     arrOfPeople.map(person => {
       const li = document.createElement("li")
@@ -109,19 +110,24 @@ const arrOfPeople = [
 
 // see the players list
   const playerList = () => {
+    document.getElementById('secondList').remove(this)
     const playerlistElement = document.getElementById('players')
         listOfPlayers.map(player => {
           const li = document.createElement("li")
           const blueButton = document.createElement("button")
+          li.setAttribute('id', '${person.id}')
           blueButton.innerHTML = "Join the Broncos!"
           blueButton.addEventListener('click', function(){
-            blueTeam.push(player.name) 
+            blueTeam.push(player.name)
+            document.getElementById('${person.id}').remove(this)
             console.log(blueTeam)
           })
           const redButton = document.createElement("button")
+          li.setAttribute('id', '${person.id}')
           redButton.innerHTML = "Join the Raiders!"
           redButton.addEventListener('click', function() { 
-            redTeam.push(player.name) 
+            redTeam.push(player.name)
+            document.getElementById('${person.id}').remove(this)
             console.log(redTeam)
           })
           li.appendChild(blueButton)
@@ -131,7 +137,6 @@ const arrOfPeople = [
           })
     console.log(listOfPlayers)
   }
-// IMPORTANT: I WANT TO MAKE A FUNCTION TO REMOVE EACH REGISTERED PLAYER AFTER JOINED TEAM, BY CLICK ASSIGNMENT! 
 
 
 // // To show the broncos list
@@ -140,9 +145,6 @@ const arrOfPeople = [
     blueTeam.map(person => {
       const li = document.createElement("li")
       const button = document.createElement("button")
-      // button.innerHTML = "Delete Player"
-      // button.addEventListener('click', function() { /* new function here deletePlayer */ } )
-      // li.appendChild(button)
       li.appendChild(document.createTextNode(person))
       broncolistElement.append(li)
     })
@@ -154,16 +156,10 @@ const arrOfPeople = [
     redTeam.map(person => {
       const li = document.createElement("li")
       const button = document.createElement("button")
-      // button.innerHTML = "Delete Player"
-      // button.addEventListener('click', function() { /* new function here deletePlayer */ } )
-      // li.appendChild(button)
       li.appendChild(document.createTextNode(person))
       raiderslistElement.append(li)
     })
   }
-
-
-
 
 // Tests
 
