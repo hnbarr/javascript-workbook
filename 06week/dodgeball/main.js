@@ -1,4 +1,10 @@
 'use strict';
+// const assert = require('assert');
+// const readline = require('readline');
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
 
 const arrOfPeople = [
     {
@@ -65,14 +71,6 @@ const arrOfPeople = [
         this.placeBord = placeBorn,
         this.team = null
     }
-
-    joinTeam(teamName) {
-        console.log(this)
-        this.teamName = teamName
-        teamName.teammates.push(this)
-        //need to remove from arrOfPeople arr, after pushing to new arr, players
-        // listOfPlayers.remove(this);
-      }
   }
 
   class Team {
@@ -82,8 +80,6 @@ const arrOfPeople = [
         this.teamColor = teamColor,
         this.teammates = []
     }
-
-    // methods here
   }
 
   const broncos = new Team("Broncos", "Horse", "Blue")
@@ -95,10 +91,11 @@ const arrOfPeople = [
     arrOfPeople.map(person => {
       const li = document.createElement("li")
       const button = document.createElement("button")
-      button.innerHTML = "Make Player"
+      button.innerHTML = "Register"
       button.addEventListener('click', function() {makePlayer(person.id)} )
       li.appendChild(button)
-      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
+      li.appendChild(document.createTextNode(person.name + ":  "))
+      li.appendChild(document.createTextNode(person.placeBorn + " - " + person.skillSet))
       listElement.append(li)
     })
   }
@@ -106,15 +103,8 @@ const arrOfPeople = [
   const makePlayer = (id) => {
     console.log(`li ${id} was clicked!`)
     listOfPlayers.push(arrOfPeople[id - 2]) //working, adding clicked li to new array, listofplayers.
-    arrOfPeople.splice(arrOfPeople[id - 2], 1) //working removal of person in array.
-    console.log(arrOfPeople)
-    console.log(listOfPlayers)
+    console.log(arrOfPeople, listOfPlayers)
     console.log(id)
-    // console.log(arrOfPeople[0])
-    // let updateList = ()=> {
-    //     return arrOfPeople
-    //   }
-    // updateList()
   }
 
 // see the players list
@@ -141,31 +131,71 @@ const arrOfPeople = [
           })
     console.log(listOfPlayers)
   }
+// IMPORTANT: I WANT TO MAKE A FUNCTION TO REMOVE EACH REGISTERED PLAYER AFTER JOINED TEAM, BY CLICK ASSIGNMENT! 
 
-// // see the broncos list
+
+// // To show the broncos list
   const broncosList = () => {
   const broncolistElement = document.getElementById('blue')
     blueTeam.map(person => {
       const li = document.createElement("li")
       const button = document.createElement("button")
-      button.innerHTML = "Delete Player"
-      button.addEventListener('click', function() { /* new function here deletePlayer */ } )
-      li.appendChild(button)
+      // button.innerHTML = "Delete Player"
+      // button.addEventListener('click', function() { /* new function here deletePlayer */ } )
+      // li.appendChild(button)
       li.appendChild(document.createTextNode(person))
       broncolistElement.append(li)
     })
   }
 
-// // see the raiders list
+// // To show the raiders list
   const raidersList = () => {
   const raiderslistElement = document.getElementById('red')
     redTeam.map(person => {
       const li = document.createElement("li")
       const button = document.createElement("button")
-      button.innerHTML = "Delete Player"
-      button.addEventListener('click', function() { /* new function here deletePlayer */ } )
-      li.appendChild(button)
+      // button.innerHTML = "Delete Player"
+      // button.addEventListener('click', function() { /* new function here deletePlayer */ } )
+      // li.appendChild(button)
       li.appendChild(document.createTextNode(person))
       raiderslistElement.append(li)
     })
   }
+
+
+
+
+// Tests
+
+// if (typeof describe === 'function') {
+//   describe('#playersList)', () => {
+//     it('should ...', () => {
+//       assert.equal(/*something*/);
+//     });
+//     it('should ...', () => {
+//       assert.equal(/*something, 'returns'*/);
+//     });
+//   });
+
+//   describe('/*some function*/', () => {
+//     it('should ...', () => {
+//       assert.equal( /*something, 'returns'*/);
+//     });
+//     it('should ...', () => {
+//       assert.equal(/*something, 'returns'*/);
+//     });
+
+//   });
+
+//   describe('/*some function*/', () => {
+//     it('should ...', () => {
+//       assert.equal( /*something, 'returns'*/);
+//     });
+//     it('should ...', () => {
+//       assert.equal(/*something, 'returns'*/);
+//     });
+
+//   });
+// } else {
+//   // getPrompt();
+// }
