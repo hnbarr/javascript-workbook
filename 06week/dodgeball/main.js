@@ -66,20 +66,6 @@ const arrOfPeople = [
         this.team = null
     }
 
-    //methods here
-    // showPlayers(){
-    //     const playerlistElement = document.getElementById('players')
-    //     listOfPlayers.map(player => {
-    //       const li = document.createElement("li")
-    //       const button = document.createElement("button")
-    //       button.innerHTML = "Join a Team!"
-    //       //   button.addEventListener('click', function() { /* function here joinTeam */ } )
-    //       li.appendChild(button)
-    //       li.appendChild(document.createTextNode(player.name))
-    //       playerlistElement.append(li)
-    //       })
-    // }
-
     joinTeam(teamName) {
         console.log(this)
         this.teamName = teamName
@@ -98,10 +84,6 @@ const arrOfPeople = [
     }
 
     // methods here
-    removePlayer(){
-
-    }
-
   }
 
   const broncos = new Team("Broncos", "Horse", "Blue")
@@ -140,39 +122,50 @@ const arrOfPeople = [
     const playerlistElement = document.getElementById('players')
         listOfPlayers.map(player => {
           const li = document.createElement("li")
-          const button = document.createElement("button")
-          button.innerHTML = "Join a Team!"
-          //   button.addEventListener('click', function() { /* function here joinTeam */ } )
-          li.appendChild(button)
+          const blueButton = document.createElement("button")
+          blueButton.innerHTML = "Join the Broncos!"
+          blueButton.addEventListener('click', function(){
+            blueTeam.push(player.name) 
+            console.log(blueTeam)
+          })
+          const redButton = document.createElement("button")
+          redButton.innerHTML = "Join the Raiders!"
+          redButton.addEventListener('click', function() { 
+            redTeam.push(player.name) 
+            console.log(redTeam)
+          })
+          li.appendChild(blueButton)
+          li.appendChild(redButton)
           li.appendChild(document.createTextNode(player.name))
           playerlistElement.append(li)
           })
+    console.log(listOfPlayers)
   }
 
 // // see the broncos list
-//   const broncosList = () => {
-//   const broncolistElement = document.getElementById('blue')
-//     broncos.map(person => {
-//       const li = document.createElement("li")
-//       const button = document.createElement("button")
-//       //   button.innerHTML = "Delete Player"
-//       //   button.addEventListener('click', function() { /* new function here deletePlayer */ } )
-//       li.appendChild(button)
-//       li.appendChild(document.createTextNode(person.name))
-//       broncolistElement.append(li)
-//     })
-//   }
+  const broncosList = () => {
+  const broncolistElement = document.getElementById('blue')
+    blueTeam.map(person => {
+      const li = document.createElement("li")
+      const button = document.createElement("button")
+      button.innerHTML = "Delete Player"
+      button.addEventListener('click', function() { /* new function here deletePlayer */ } )
+      li.appendChild(button)
+      li.appendChild(document.createTextNode(person))
+      broncolistElement.append(li)
+    })
+  }
 
 // // see the raiders list
-//   const raidersList = () => {
-//   const raiderslistElement = document.getElementById('red')
-//     raiders.map(person => {
-//       const li = document.createElement("li")
-//       const button = document.createElement("button")
-//       //   button.innerHTML = "Delete Player"
-//       //   button.addEventListener('click', function() { /* new function here deletePlayer */ } )
-//       li.appendChild(button)
-//       li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
-//       raiderslistElement.append(li)
-//     })
-//   }
+  const raidersList = () => {
+  const raiderslistElement = document.getElementById('red')
+    redTeam.map(person => {
+      const li = document.createElement("li")
+      const button = document.createElement("button")
+      button.innerHTML = "Delete Player"
+      button.addEventListener('click', function() { /* new function here deletePlayer */ } )
+      li.appendChild(button)
+      li.appendChild(document.createTextNode(person))
+      raiderslistElement.append(li)
+    })
+  }
