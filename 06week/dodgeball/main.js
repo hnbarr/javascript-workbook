@@ -92,6 +92,7 @@ const arrOfPeople = [
     arrOfPeople.map(person => {
       const li = document.createElement("li")
       const button = document.createElement("button")
+      li.setAttribute('id', 'applicant')
       button.innerHTML = "Register"
       button.addEventListener('click', function() {makePlayer(person.id)} )
       li.appendChild(button)
@@ -104,6 +105,7 @@ const arrOfPeople = [
   const makePlayer = (id) => {
     console.log(`li ${id} was clicked!`)
     listOfPlayers.push(arrOfPeople[id - 2]) //working, adding clicked li to new array, listofplayers.
+    document.getElementById('applicant').remove(this)
     console.log(arrOfPeople, listOfPlayers)
     console.log(id)
   }
@@ -138,7 +140,6 @@ const arrOfPeople = [
     console.log(listOfPlayers)
   }
 
-
 // // To show the broncos list
   const broncosList = () => {
   const broncolistElement = document.getElementById('blue')
@@ -161,37 +162,30 @@ const arrOfPeople = [
     })
   }
 
+// To reset page
+const reset = () => {
+  window.location.href=window.location.href
+}
+
 // Tests
 
 // if (typeof describe === 'function') {
-//   describe('#playersList)', () => {
-//     it('should ...', () => {
-//       assert.equal(/*something*/);
-//     });
-//     it('should ...', () => {
-//       assert.equal(/*something, 'returns'*/);
+//   describe('makePLayer()', () => {
+//     it('should be able to push person to player list', () => {
+//       let boolean = true
+//       assert.equal(boolean, true);
 //     });
 //   });
-
-//   describe('/*some function*/', () => {
-//     it('should ...', () => {
-//       assert.equal( /*something, 'returns'*/);
+//   describe('joinTeam(broncos)', () => {
+//     it('should allow player to become a blue teammate', () => {
+//       let boolean = true
+//       assert.equal(boolean, true);
 //     });
-//     it('should ...', () => {
-//       assert.equal(/*something, 'returns'*/);
-//     });
-
 //   });
-
-//   describe('/*some function*/', () => {
-//     it('should ...', () => {
-//       assert.equal( /*something, 'returns'*/);
+//   describe('joinTeam(raiders)', () => {
+//     it('should allow player to become a red teammate', () => {
+//       let boolean = true
+//       assert.equal(boolean, true);
 //     });
-//     it('should ...', () => {
-//       assert.equal(/*something, 'returns'*/);
-//     });
-
-//   });
-// } else {
-//   // getPrompt();
+//   }); 
 // }
