@@ -1,10 +1,10 @@
 'use strict';
-const assert = require('assert');
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// const assert = require('assert');
+// const readline = require('readline');
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
 
   const arrOfPeople = [
     {
@@ -199,23 +199,23 @@ const reset = () => {
 }
 
 // Tests
-if (typeof describe === 'function') {
-  describe('makePlayer()', () => {
-    it('should be able to push person to player list', () => {
-      let boolean = true
-      assert.equal(boolean, true);
-    });
-  });
-  describe('joinTeam(broncos)', () => {
-    it('should allow player to become a blue teammate', () => {
-      let boolean = true
-      assert.equal(boolean, true);
-    });
-  });
-  describe('joinTeam(raiders)', () => {
-    it('should allow player to become a red teammate', () => {
-      let boolean = true
-      assert.equal(boolean, true);
-    });
-  }); 
-}
+// if (typeof describe === 'function') {
+//   describe('makePlayer()', () => {
+//     it('should be able to push person to player list', () => {
+//       let boolean = true
+//       assert.equal(boolean, true);
+//     });
+//   });
+//   describe('joinTeam(broncos)', () => {
+//     it('should allow player to become a blue teammate', () => {
+//       let boolean = true
+//       assert.equal(boolean, true);
+//     });
+//   });
+//   describe('joinTeam(raiders)', () => {
+//     it('should allow player to become a red teammate', () => {
+//       let boolean = true
+//       assert.equal(boolean, true);
+//     });
+//   }); 
+// }
