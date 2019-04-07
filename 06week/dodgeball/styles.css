@@ -31,11 +31,13 @@ button {
 #broncoBtn {
    background-color: #3661A2;
    color: #FFFFFF;
+   width: 150px;
 }
 
 #raiderBtn{
     background-color: #D73E4C;
     color: #FFFFFF;
+    width: 150px;
 }
 
 .mainBtn {

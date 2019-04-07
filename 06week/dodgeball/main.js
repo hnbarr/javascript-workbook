@@ -1,12 +1,12 @@
 'use strict';
-// const assert = require('assert');
-// const readline = require('readline');
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
+const assert = require('assert');
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-const arrOfPeople = [
+  const arrOfPeople = [
     {
       id: 2,
       name: "Charles Young",
@@ -68,8 +68,31 @@ const arrOfPeople = [
         this.name = name,
         this.age = age,
         this.skillSet = skillSet,
-        this.placeBord = placeBorn,
-        this.team = null
+        this.placeBord = placeBorn
+    }
+    // registerPlayer(id){
+    //   registerBtn = document.getElementById('registerBtn')
+    //   registerBtn.addEventListener('click', function() {this.registerPlayer()})
+   
+    //   this.arrOfPeople[arrOfPeople[id]] = new Registered ('yes', 'yes', 'yes', 'yes', '2') //to add these values to each registered player
+    //   listOfPlayers.push(this.arrOfPeople[arrOfPeople[id]])
+    //   document.getElementById('applicant').remove(this) //to remove li once clicked on and moved to players
+    // }
+
+    //register player is the same as makePlayer, below.. ? wtf
+  }
+
+  class Registered extends Player{
+    constructor(canThrow, canDodge, isHealthy, hasPaid, yearsOfExperience, id, name, age, skillSet, placeBord){
+      super(id, name, age, skillSet, placeBord),
+      this.canThrow = canThrow,
+      this.canDodge = canDodge,
+      this.isHealthy = isHealthy,
+      this.hasPaid = hasPaid,
+      this.yearsOfExperience = yearsOfExperience
+    }
+    joinTeam(team){
+      team.teammates.push(this.arrOfPeople[arrOfPeople[id]])
     }
   }
 
@@ -79,6 +102,14 @@ const arrOfPeople = [
         this.mascot = mascot,
         this.teamColor = teamColor,
         this.teammates = []
+    }
+
+    showTeam(){
+      if(name === 'Broncos'){
+        teammates = blueTeam
+      } else if(name === 'Raiders'){
+        teammates === redTeam
+      }
     }
   }
 
@@ -94,7 +125,8 @@ const arrOfPeople = [
       const button = document.createElement("button")
       li.setAttribute('id', 'applicant')
       button.innerHTML = "Register"
-      button.addEventListener('click', function() {makePlayer(person.id)} )
+      button.setAttribute('id', 'registerBtn')
+      button.addEventListener('click', function() {makePlayer(person.id)})
       li.appendChild(button)
       li.appendChild(document.createTextNode(person.name + ":  "))
       li.appendChild(document.createTextNode(person.placeBorn + " - " + person.skillSet))
@@ -103,10 +135,9 @@ const arrOfPeople = [
   }
 
   const makePlayer = (id) => {
-    console.log(`li ${id} was clicked!`)
     listOfPlayers.push(arrOfPeople[id - 2]) //working, adding clicked li to new array, listofplayers.
     document.getElementById('applicant').remove(this)
-    console.log(arrOfPeople, listOfPlayers)
+    console.log('moved into players array:',listOfPlayers)
     console.log(id)
   }
 
@@ -122,7 +153,7 @@ const arrOfPeople = [
           blueButton.addEventListener('click', function(){
             blueTeam.push(player.name)
             document.getElementById('${person.id}').remove(this)
-            console.log(blueTeam)
+            console.log('blue team array', blueTeam)
           })
           const redButton = document.createElement("button")
           li.setAttribute('id', '${person.id}')
@@ -130,7 +161,7 @@ const arrOfPeople = [
           redButton.addEventListener('click', function() { 
             redTeam.push(player.name)
             document.getElementById('${person.id}').remove(this)
-            console.log(redTeam)
+            console.log('red team array', redTeam)
           })
           li.appendChild(blueButton)
           li.appendChild(redButton)
@@ -168,24 +199,23 @@ const reset = () => {
 }
 
 // Tests
-
-// if (typeof describe === 'function') {
-//   describe('makePLayer()', () => {
-//     it('should be able to push person to player list', () => {
-//       let boolean = true
-//       assert.equal(boolean, true);
-//     });
-//   });
-//   describe('joinTeam(broncos)', () => {
-//     it('should allow player to become a blue teammate', () => {
-//       let boolean = true
-//       assert.equal(boolean, true);
-//     });
-//   });
-//   describe('joinTeam(raiders)', () => {
-//     it('should allow player to become a red teammate', () => {
-//       let boolean = true
-//       assert.equal(boolean, true);
-//     });
-//   }); 
-// }
+if (typeof describe === 'function') {
+  describe('makePlayer()', () => {
+    it('should be able to push person to player list', () => {
+      let boolean = true
+      assert.equal(boolean, true);
+    });
+  });
+  describe('joinTeam(broncos)', () => {
+    it('should allow player to become a blue teammate', () => {
+      let boolean = true
+      assert.equal(boolean, true);
+    });
+  });
+  describe('joinTeam(raiders)', () => {
+    it('should allow player to become a red teammate', () => {
+      let boolean = true
+      assert.equal(boolean, true);
+    });
+  }); 
+}
