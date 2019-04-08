@@ -14,13 +14,14 @@
     <div>
       <h4>Who Signed Up!?</h4>
       <!--  -->
-      <button class='mainBtn' id='firstList' onclick="listOfPeople()">Applicants</button>
+      <button class='mainBtn' id='firstList' onclick="listPeopleChoices()">Applicants</button>
       <ul id="people"></ul>
     </div>
     <hr>
 
     <div>
       <h4>Registered Players</h4>
+      <!-- onclick="showRegistered()" -->
       <button class='mainBtn' id='secondList' onclick="playerList()">Players</button>
       <ul id="players"></ul>
     </div>
@@ -28,19 +29,22 @@
 
     <div>
       <h4>Bronco's!</h4>
+      <!-- onclick="broncosList()" -->
       <button class='mainBtn' id='broncoBtn' onclick="broncosList()">Meet The Broncos!</button>
       <ul id="blue"></ul>
     </div>
 
     <div>
       <h4>Raider's!</h4>
+      <!-- onclick="raidersList()" -->
       <button class='mainBtn' id='raiderBtn' onclick="raidersList()">Meet The Raiders!</button>
       <ul id="red"></ul>
     </div>
     <hr>
-    <button id='reset' onclick='reset()'>Reset Board</button>
+    <button id='reset' onclick='reset()' >Reset Board</button>
    
 </div>
   <script src='./main.js'></script>
+  <!-- <script src="./class.js"></script> -->
 </body>
 </html>

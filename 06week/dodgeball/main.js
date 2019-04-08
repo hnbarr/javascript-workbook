@@ -117,7 +117,7 @@
   const raiders = new Team("Raiders", "Cowboy", "Red")
   
 // see the people list
-  const listOfPeople = () => {
+  const listPeopleChoices = () => {
   document.getElementById('firstList').remove(this)
   const listElement = document.getElementById('people')
     arrOfPeople.map(person => {
@@ -128,8 +128,8 @@
       button.setAttribute('id', 'registerBtn')
       button.addEventListener('click', function() {makePlayer(person.id)})
       li.appendChild(button)
-      li.appendChild(document.createTextNode(person.name + ":  "))
-      li.appendChild(document.createTextNode(person.placeBorn + " - " + person.skillSet))
+      li.appendChild(document.createTextNode(person.name + ":   "))
+      li.appendChild(document.createTextNode(person.placeBorn))
       listElement.append(li)
     })
   }
