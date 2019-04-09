@@ -24,10 +24,16 @@ let getPokemon1 = () => {
     })
     .then(function (data) {
       // getting pokemon name here!
-      p1name = data.species.name
       p1value = data.base_experience
-      console.log('name: ', name, 'p1: ', p1, 'p2: ', p2)
-      checkForWin()
+    //   console.log('name: ', name, 'p1: ', p1, 'p2: ', p2)
+      let p1name = data.species.name.toUpperCase()
+        let display = `<h1> ${p1name} </h1>`
+        display += 
+        `Experience: ${p1value}
+        <br>
+        <img src="   ${data.sprites.front_shiny}" >
+        `
+        document.getElementById('pokeName1').innerHTML = display;
     })
     .catch(function (error) {
       console.log('Requestfailed', error)
@@ -51,10 +57,16 @@ let getPokemon2 = () => {
       })
       .then(function (data) {
         // getting pokemon name here!
-        p2name = data.species.name
         p2value = data.base_experience
-        console.log('name: ', name, 'p1: ', p1, 'p2: ', p2)
-        checkForWin()
+        // console.log('name: ', name, 'p1: ', p1, 'p2: ', p2)
+        let p2name = data.species.name.toUpperCase()
+        let display = `<h1> ${p2name} </h1>`
+        display += 
+        `Experience: ${p2value}
+        <br>
+        <img src="${data.sprites.front_shiny}" >
+        `
+        document.getElementById('pokeName2').innerHTML = display;
       })
       .catch(function (error) {
         console.log('Requestfailed', error)
@@ -63,12 +75,14 @@ let getPokemon2 = () => {
 
   let checkForWin = ()=> {
       if(p1 !== null && p2 !== null){
+          console.log('working here')
+          console.log(p1value, p2value)
         if(p1value === p2value){
             console.log(`It's a draw!`)
           } else if(p2 > p1){
-            console.log(`Winner: ${p2.name}!`)
+            console.log(`Winner: ${p2name}!`)
           } else if(p1 > p2){
-            console.log(`Winner: ${p1.name}!`)
+            console.log(`Winner: ${p1name}!`)
           }
       }
   }
