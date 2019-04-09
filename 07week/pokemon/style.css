@@ -1,10 +1,16 @@
+body {
+    background-image: url(./dynamic-style.png);
+    font-family: 'Open Sans', sans-serif;
+}
+
 .container {
-    background-color: rgb(181, 181, 181);
+    background-color: #F1EFE8;
     margin: 0 auto;
     width: 50%;
     border-radius: 12px;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     padding: 10px;
+    box-shadow: 0 0 10px #BFBFBF;
 }
 
 .cards {
@@ -36,9 +42,11 @@ h2 {
 button {
     width: 100px;
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid #F1EFE8;
     border-radius: 8px;
     outline: none;
+    box-shadow: inset 0 0 5px rgb(174, 174, 174);
+    font-family: 'Open Sans', sans-serif;
 }
 
 button:hover {

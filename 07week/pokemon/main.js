@@ -29,7 +29,8 @@ let getPokemon1 = () => {
       let p1name = data.species.name
         let display = `<h1> ${p1name} </h1>`
         display += 
-        `Experience: ${p1value}
+    // Experience: ${p1value}
+        `
         <br>
         <img src="   ${data.sprites.front_shiny}" >
         `
@@ -62,7 +63,8 @@ let getPokemon2 = () => {
         let p2name = data.species.name
         let display = `<h1> ${p2name} </h1>`
         display += 
-        `Experience: ${p2value}
+        // Experience: ${p2value}
+        `
         <br>
         <img src="${data.sprites.front_shiny}" >
         `
