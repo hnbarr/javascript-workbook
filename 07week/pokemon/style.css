@@ -18,6 +18,7 @@
     margin: 0 auto;
     width: 40%;
     padding: 10px;
+    text-align: center;
  }
 
 .active {
@@ -56,4 +57,9 @@ button:hover {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+#announcement {
+    text-align: center;
+    height: 30px;
 }

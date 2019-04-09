@@ -16,7 +16,7 @@ let getPokemon1 = () => {
       let random = Math.floor(Math.random() * 20)
       console.log('random: ', random)
       let player = data.results[random]
-      p1 = player
+      p1 = player //the object
       return fetch(player.url) //access that api within that pokemon
     })
     .then(function (response) {
@@ -26,7 +26,7 @@ let getPokemon1 = () => {
       // getting pokemon name here!
       p1value = data.base_experience
     //   console.log('name: ', name, 'p1: ', p1, 'p2: ', p2)
-      let p1name = data.species.name.toUpperCase()
+      let p1name = data.species.name
         let display = `<h1> ${p1name} </h1>`
         display += 
         `Experience: ${p1value}
@@ -49,7 +49,7 @@ let getPokemon2 = () => {
         let random = Math.floor(Math.random() * 20)
         console.log('random: ', random)
         let player = data.results[random]
-        p2 = player
+        p2 = player //the object
         return fetch(player.url) //access that api within that pokemon
       })
       .then(function (response) {
@@ -59,7 +59,7 @@ let getPokemon2 = () => {
         // getting pokemon name here!
         p2value = data.base_experience
         // console.log('name: ', name, 'p1: ', p1, 'p2: ', p2)
-        let p2name = data.species.name.toUpperCase()
+        let p2name = data.species.name
         let display = `<h1> ${p2name} </h1>`
         display += 
         `Experience: ${p2value}
@@ -77,12 +77,17 @@ let getPokemon2 = () => {
       if(p1 !== null && p2 !== null){
           console.log('working here')
           console.log(p1value, p2value)
+          console.log(p1.name, p2.name)
         if(p1value === p2value){
             console.log(`It's a draw!`)
-          } else if(p2 > p1){
-            console.log(`Winner: ${p2name}!`)
-          } else if(p1 > p2){
-            console.log(`Winner: ${p1name}!`)
+            document.getElementById('announcement').innerHTML = `It's a Draw!`
+          } else if(p2value > p1value){
+            console.log(`Winner: ${p2.name}!`)
+            document.getElementById('announcement').innerHTML = `Winner: ${p2.name}!`
+          } else if(p1value > p2value){
+            console.log(`Winner: ${p1.name}!`)
+            document.getElementById('announcement').innerHTML = `Winner: ${p1.name}!`
+
           }
       }
   }
