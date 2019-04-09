@@ -10,18 +10,23 @@
     <h2>Pokemon Stadium</h2>
   <div class="container"> 
     
-    <div class="card" id="first">
+    <div class="cards">
+      <div class="card" id="first">
         <button id="get1" onclick="getPokemon1()">GO!</button>
         <div class="stats" id="pokeName1"> </div>
-    </div>
-
-    <div class="card" id="second">
+      </div>
+      <div class="card" id="second">
         <button id="get2" onclick="getPokemon2()">GO!</button>
         <div class="stats" id="pokeName2"> </div>
       </div>
-
-    <!-- <button class="restart" onclick="restart()"> Restart</button> -->
-
+    </div>
+    <hr>
+    <div class="active">
+        <!-- onclick="checkForWin()" -->
+      <button class="battle" > Battle</button>
+      <button class="restart" onclick="restart()"> Restart</button>
+    </div>
+   
   </div>
   
   <script src="./main.js"></script>

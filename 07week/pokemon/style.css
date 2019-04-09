@@ -5,9 +5,18 @@
     border-radius: 12px;
     border: 1px solid grey;
     padding: 10px;
-    display: flex;
+}
+
+.cards {
+    display: flex; 
     justify-content: space-evenly;
     align-items: center;
+ }
+
+.action {
+   display: flex; 
+   justify-content: space-evenly;
+   align-items: center;
 }
 
 h2 {
