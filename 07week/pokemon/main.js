@@ -25,7 +25,6 @@ let getPokemon1 = () => {
     .then(function (data) {
       // getting pokemon name here!
       p1value = data.base_experience
-    //   console.log('name: ', name, 'p1: ', p1, 'p2: ', p2)
       let p1name = data.species.name
         let display = `<h1> ${p1name} </h1>`
         display += 
@@ -59,7 +58,6 @@ let getPokemon2 = () => {
       .then(function (data) {
         // getting pokemon name here!
         p2value = data.base_experience
-        // console.log('name: ', name, 'p1: ', p1, 'p2: ', p2)
         let p2name = data.species.name
         let display = `<h1> ${p2name} </h1>`
         display += 
@@ -85,10 +83,10 @@ let getPokemon2 = () => {
             document.getElementById('announcement').innerHTML = `It's a Draw!`
           } else if(p2value > p1value){
             console.log(`Winner: ${p2.name}!`)
-            document.getElementById('announcement').innerHTML = `Winner: ${p2.name}!`
+            document.getElementById('announcement').innerHTML = `${p2.name} wins!`
           } else if(p1value > p2value){
             console.log(`Winner: ${p1.name}!`)
-            document.getElementById('announcement').innerHTML = `Winner: ${p1.name}!`
+            document.getElementById('announcement').innerHTML = `${p1.name} wins!`
 
           }
       }
