@@ -93,12 +93,6 @@ const arrOfPeople = [
     }
   }
 
-//   class Player {
-//     constructor(canThrowBall, canDodgeBall, hasPaid, isHealthy, yearsExperience){
-//         // super(id, name, skillSet, placeBorn);
-//     }
-//   }
-
   class BlueTeammate {
     constructor(){}
   }
@@ -137,7 +131,7 @@ const arrOfPeople = [
             document.getElementById('applicant').remove(this)
         }
     })
-    console.log("listOfPlayers:", listOfPlayers)
+    // console.log("listOfPlayers:", listOfPlayers)
   }
 
   const reset = () => {
