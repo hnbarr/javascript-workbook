@@ -131,7 +131,7 @@ const arrOfPeople = [
             document.getElementById('applicant').remove(this)
         }
     })
-    // console.log("listOfPlayers:", listOfPlayers)
+    console.log("listOfPlayers:", listOfPlayers)
   }
 
   const reset = () => {
