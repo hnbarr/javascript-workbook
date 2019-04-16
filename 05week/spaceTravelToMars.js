@@ -7,9 +7,43 @@ let jobTypes = {
   mechanic: 'Repair Ship',
   commander: 'Main Ship',
   programmer: 'Any Ship!'
-};
+}
 
-// Your code here
+// working & passing
+class CrewMember {
+  constructor(name, job, specialSkill, ship){
+    this.name = name
+    this.job = job
+    this.specialSkill = specialSkill
+    this.ship = ship
+  }
+  enterShip(shipName) {
+    this.ship = shipName
+    shipName.crew.push(this)
+  }
+}
+
+// working and passing!
+class Ship {
+  constructor(name, type, ability, crew){
+    this.name = name
+    this.type = type
+    this.ability = ability
+    this.crew = []
+  }
+  missionStatement(){
+    if (this.crew.length > 0){
+      if ( this.type === 'MAV') {
+        return "Ascend into low orbit"
+      } else if ( this.type === 'Main Ship') {
+        return "Interplanetary Space Travel"
+      }
+    } else {
+      return "Can't perform a mission yet."
+    }
+  }
+}
+
 
 //tests
 if (typeof describe === 'function'){
