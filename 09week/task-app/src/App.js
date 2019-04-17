@@ -23,21 +23,21 @@ class App extends Component {
     })
   }
 
-  deleteTask=(index)=>{
-    this.setState({
-      tasks: [...this.state.tasks.filter(task => task !== this.state.tasks[index])]
-    })
-  }
-
   handleList=()=>{
-    return this.state.tasks.map((task, index)=>{
+    return this.state.tasks.map((task, key)=>{
       return (
-      <p key={index}>
-        {/* <button className='delete' onClick={this.deleteTask}>Done!</button> */}
-        <button className='delete' onClick={(e) => this.deleteTask(index, e)}>Done!</button>
+      <p key={task.toString()}>
+        {/* {console.log(key, task.toString())} */}
+        <button className='delete' onClick={(e) => this.deleteTask(key, e)}><i className="fas fa-times fa-2x"></i></button>
         {task}
       </p>
       )
+    })
+  }
+
+  deleteTask=(key)=>{
+    this.setState({
+      tasks: [...this.state.tasks.filter(task => task !== this.state.tasks[key])]
     })
   }
 
@@ -46,12 +46,12 @@ class App extends Component {
       <div className="App">
         <header>
           <h1>tasky</h1>
-          <h6>lets do some things!</h6>
+          <h4>lets do some things!</h4>
         </header>
         <hr />
         <section>
-          <input type='text' onChange={this.handleInput} value={this.state.inputVal}></input>
-          <button className='add' onClick={this.handleClick}>Add Task</button>
+          <input type='text' onChange={this.handleInput} value={this.state.inputVal} placeholder='what do you need to do?'></input>
+          <button className='add' onClick={(e) => this.handleClick(e)}>Add Task</button>
         </section>
         <hr/>
         {this.handleList()}
