@@ -24,11 +24,8 @@ class App extends Component {
   }
 
   deleteTask=(index)=>{
-    console.log('working here', this.state.tasks)
     this.setState({
-      tasks: [...this.state.tasks.filter(task => task[index] !== index)]
-      // tasks: [...this.state.tasks.remove(this.state.tasks[index])]
-      // need help here, with logic. to remove clicked p
+      tasks: [...this.state.tasks.filter(task => task !== this.state.tasks[index])]
     })
   }
 
@@ -36,7 +33,8 @@ class App extends Component {
     return this.state.tasks.map((task, index)=>{
       return (
       <p key={index}>
-        <button className='delete' onClick={this.deleteTask}>Done!</button>
+        {/* <button className='delete' onClick={this.deleteTask}>Done!</button> */}
+        <button className='delete' onClick={(e) => this.deleteTask(index, e)}>Done!</button>
         {task}
       </p>
       )
