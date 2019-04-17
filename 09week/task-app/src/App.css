@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+  border: 1px solid #282c34;
+  color: #282c34;
+  width: 75%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+input, button {
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid #282c34;  
+  margin: 3px;
+  padding: 5px;
+}
