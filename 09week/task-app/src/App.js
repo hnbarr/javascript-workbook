@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Beer from './components/Beer';
 
 class App extends Component {
   constructor(props){
@@ -44,17 +45,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
+        {/* <header>
           <h1>tasky</h1>
           <h4>lets do some things!</h4>
         </header>
         <hr />
         <section>
           <input type='text' onChange={this.handleInput} value={this.state.inputVal} placeholder='what do you need to do?'></input>
-          <button className='add' onClick={(e) => this.handleClick(e)}>Add Task</button>
+          <button className='add' onKeyPress={(e)=> this.handleClick(e)} onClick={(e) => this.handleClick(e)}>Add Task</button>
         </section>
-        <hr/>
-        {this.handleList()}
+        <hr/> */}
+        {/* {this.handleList()} */}
+        <Beer />
       </div>
     );
   }
