@@ -3,7 +3,7 @@
   border: 1px solid #282c34;
   border-radius: 8px;
   color: #282c34;
-  width: 50%;
+  width: 60%;
   padding: 10px;
   margin: 0 auto;
 }
@@ -29,34 +29,46 @@ input {
   float: left;
 }
 
-p {
+/* p {
   width: 40%;
   margin: 0 auto;
   padding: 10px;
   font-size: 20px;
-}
+} */
+
+/* beer stuff */
 
 .cardSection, .section{
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+p{
+  text-align: center;
+  padding: 5px;
 }
 
 .beerCard{
   display: inline-block;
-  width: 30%;
-  height: 150px;
+  width: 65%;
+  /* height: 275px; */
   border: 1px solid grey;
-  padding: 3px;
+  padding: 10px;
   margin: 3px;
 }
 
 .loveBtn, .shareBtn {
-  padding: 8px;
+  padding: 10px;
   font-size: 10px;
   border-radius: 8px;
   background-color: transparent;
   outline: none;
-  /* border: none */
+  border: none
 }
+
+/* .buttons {
+  display: flex;
+  justify-content: center;
+} */
