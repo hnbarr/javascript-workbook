@@ -1,21 +1,13 @@
 import React, { Component } from 'react'
 
-export default class Trails extends Component {
+export default class Header extends Component {
   constructor(props) {
     super(props)
   
     this.state = {
     input: ''
     }
-  }
-
-  componentDidMount = () => {
-    fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?latlng=30.2729,-97.7443&radius=10&key=AIzaSyDF04sIWVc7h5s5WxqJwvA93RLPVsTftIM')
-    .then((res)=>res.json())
-    .then((data)=> {
-        console.log(data)
-    })
-  }
+}
   
   render() {
     return (
@@ -28,6 +20,15 @@ export default class Trails extends Component {
 }
 
 
-// AIzaSyDF04sIWVc7h5s5WxqJwvA93RLPVsTftIM
+// &key=AIzaSyDF04sIWVc7h5s5WxqJwvA93RLPVsTftIM
 // &placeid=ChIJLwPMoJm1RIYRetVp1EtGm10
 // &type=park
+// latlng=30.2729,-97.7443
+
+
+//   initMap= () => {
+//     map = new google.maps.Map(document.getElementById('map'), {
+//       center: {lat: 30.2672, lng: -97.7443},
+//       zoom: 8
+//     });
+//   }

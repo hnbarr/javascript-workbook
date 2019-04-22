@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Trails from './components/Trails';
+import Header from './components/Header';
 
 class App extends Component {
   render() {
@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <section className="section">
           <h1>Tails n' Trails</h1>
-          <Trails/>
+          <Header />
         </section>
       </div>
     );
