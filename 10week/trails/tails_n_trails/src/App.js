@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
+import Card from './components/Card';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
         <section className="section">
           <h1>Tails n' Trails</h1>
           <Header />
+          <Card />
         </section>
       </div>
     );

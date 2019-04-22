@@ -1,24 +1,23 @@
 .App {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
   background-image: url(./topography.png);
   min-height: 100vh;
   min-width: 100vw;
-  display: flex;
-  justify-content: start;
-  flex-direction: row;
-
 }
 
 .section{
-  border: 1px solid white;
-  border-radius: 8px;
-  background-color: #282c34;
-  width: 600px;
-  min-height: 25vh;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: baseline;
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: #282c34;
+  min-width: 400px;
+  min-height: 25vh;
+  text-align: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -29,8 +28,8 @@
 }
 
 #zipField {
-  padding: 8px; 
-  width: 300px;
+  padding:7px; 
+  width: 150px;
   border-radius: 5px;
   outline: none;
   margin: 5px;
@@ -48,4 +47,23 @@
 
 #submitBtn:hover{
   background-color: rgb(55, 60, 72);
+}
+
+
+/* card stuff! */
+.card{
+  border: 1px solid white;
+  border-radius: 8px;
+  margin-top: 75px;
+}
+
+.card p {
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+
+.card h5{
+  border-bottom: 1px solid white;
+  padding: 20px;
+
 }

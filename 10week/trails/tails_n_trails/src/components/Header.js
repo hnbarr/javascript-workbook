@@ -5,15 +5,31 @@ export default class Header extends Component {
     super(props)
   
     this.state = {
-    input: ''
+    inputVal: ' ',
+    currentZip: null
     }
 }
+  handleInput=(e)=>{
+    this.setState({
+    inputVal: e.target.value
+    })
+  }
+
+
+  handleSubmit = () => {
+    //search api for zip code and then clear field
+    //use this.state.currentZip for api search!
+    this.setState({
+      currentZip: this.state.inputVal, //moved the zip that was entered, into its own state.
+      inputVal: ' '
+    })
+  }
   
   render() {
     return (
       <div>
-        <input id='zipField' type='text' placeholder='Enter zip code here!'></input>
-        <button id='submitBtn' type='submit'>Submit</button>
+        <input id='zipField' type='text' placeholder='Enter zip code here!' onChange={this.handleInput} value={this.state.inputVal}></input>
+        <button id='submitBtn' type='submit' onClick={this.handleSubmit}>Submit</button>
       </div>
     )
   }
