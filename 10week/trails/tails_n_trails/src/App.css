@@ -1,0 +1,52 @@
+.App {
+  background-image: url(./topography.png);
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+
+}
+
+.section{
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: #282c34;
+  width: 600px;
+  /* min-height: 25vh; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-header {
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#zipField {
+  padding: 8px; 
+  width: 300px;
+  border-radius: 5px;
+  outline: none;
+  margin: 5px;
+}
+#submitBtn {
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  width: 80px;
+  outline: none;
+  margin: 5px;
+}
+
+#submitBtn:hover{
+  background-color: rgb(55, 60, 72);
+}
