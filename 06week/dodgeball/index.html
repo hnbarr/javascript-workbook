@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+  <title>Dodge Ball</title>
+</head>
+
+<body>
+<div id="container">
+    <div>
+      <h4>Who Signed Up!?</h4>
+      <!--  -->
+      <button class='mainBtn' id='firstList' onclick="listPeopleChoices()">Applicants</button>
+      <ul id="people"></ul>
+    </div>
+    <hr>
+
+    <div>
+      <h4>Registered Players</h4>
+      <!-- onclick="showRegistered()" -->
+      <button class='mainBtn' id='secondList' onclick="playerList()">Players</button>
+      <ul id="players"></ul>
+    </div>
+    <hr>
+
+    <div>
+      <h4>Bronco's!</h4>
+      <!-- onclick="broncosList()" -->
+      <button class='mainBtn' id='broncoBtn' onclick="broncosList()">Meet The Broncos!</button>
+      <ul id="blue"></ul>
+    </div>
+
+    <div>
+      <h4>Raider's!</h4>
+      <!-- onclick="raidersList()" -->
+      <button class='mainBtn' id='raiderBtn' onclick="raidersList()">Meet The Raiders!</button>
+      <ul id="red"></ul>
+    </div>
+    <hr>
+    <button id='reset' onclick='reset()' >Reset Board</button>
+   
+</div>
+  <script src='./main.js'></script>
+  <!-- <script src="./class.js"></script> -->
+</body>
+</html>

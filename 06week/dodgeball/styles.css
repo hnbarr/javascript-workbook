@@ -1,0 +1,87 @@
+li {
+    list-style-type: none;
+    padding: 2px;
+    font-size: 16px;
+}
+
+#container {
+    width: 55%;
+    margin: 0 auto;
+    border: 1px solid #F0F6E3;
+    border-radius: 12px;
+    padding: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px #BFBFBF;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-image: url(./leaves.png);
+}
+
+button {
+    background-color: #FFFFFF;
+    box-shadow: inset 0 0 5px #BFBFBF;
+    padding: 2px;
+    width: 120px;
+    margin-right: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#broncoBtn {
+   background-color: #3661A2;
+   color: #FFFFFF;
+   width: 150px;
+}
+
+#raiderBtn{
+    background-color: #D73E4C;
+    color: #FFFFFF;
+    width: 150px;
+}
+
+.mainBtn {
+    padding: 2px;
+    width: 75px;
+    height: 22px;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+}
+
+hr {
+    margin: 15px;
+}
+
+h4 {
+    margin: 2px;
+    text-align: center;
+}
+
+#people button {
+    background-color: #E9F1D9;
+    padding: 2px;
+    width: 80px;
+    margin-right: 10px;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 8px;
+    outline: none;
+}
+
+#players button {
+    background-color: #FFFFFF;
+    padding: 2px;
+    width: 120px;
+    margin-right: 10px;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 8px;
+    outline: none;
+}
+
+#reset {
+    width: 150px;
+    height: 22px;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+}
