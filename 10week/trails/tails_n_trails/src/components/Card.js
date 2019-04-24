@@ -5,7 +5,6 @@ export default class Card extends Component {
     //   super(props)
     
     //   this.state = {
-         
     //   }
     // }
     

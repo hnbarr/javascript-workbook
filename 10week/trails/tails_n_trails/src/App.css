@@ -12,7 +12,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: baseline;
-  border: 1px solid white;
   border-radius: 8px;
   background-color: #282c34;
   min-width: 400px;
@@ -24,7 +23,7 @@
 
 .App-header {
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #F9F9F9;
 }
 
 #zipField {
@@ -33,10 +32,11 @@
   border-radius: 5px;
   outline: none;
   margin: 5px;
+  background-color: #F9F9F9;
 }
 #submitBtn {
   background-color: transparent;
-  color: white;
+  color: #F9F9F9;
   text-align: center;
   padding: 8px;
   border-radius: 5px;
@@ -52,7 +52,7 @@
 
 /* card stuff! */
 .card{
-  border: 1px solid white;
+  border: 1px solid #F9F9F9;
   border-radius: 8px;
   margin-top: 75px;
 }
@@ -63,7 +63,7 @@
 }
 
 .card h5{
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #F9F9F9;
   padding: 20px;
 
 }

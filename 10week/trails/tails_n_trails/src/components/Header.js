@@ -28,7 +28,7 @@ export default class Header extends Component {
   render() {
     return (
       <div>
-        <input id='zipField' type='text' placeholder='Enter zip code here!' onChange={this.handleInput} value={this.state.inputVal}></input>
+        <input id='zipField' type='text' onChange={this.handleInput} value={this.state.inputVal} placeholder='Enter zip code here!'></input>
         <button id='submitBtn' type='submit' onClick={this.handleSubmit}>Submit</button>
       </div>
     )
