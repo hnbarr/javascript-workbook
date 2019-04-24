@@ -36,15 +36,5 @@ export default class Header extends Component {
 }
 
 
-// &key=AIzaSyDF04sIWVc7h5s5WxqJwvA93RLPVsTftIM
-// &placeid=ChIJLwPMoJm1RIYRetVp1EtGm10
-// &type=park
 // latlng=30.2729,-97.7443
 
-
-//   initMap= () => {
-//     map = new google.maps.Map(document.getElementById('map'), {
-//       center: {lat: 30.2672, lng: -97.7443},
-//       zoom: 8
-//     });
-//   }

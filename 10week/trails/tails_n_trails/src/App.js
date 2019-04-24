@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Card from './components/Card';
+import Map from './components/Map';
 
 class App extends Component {
   render() {
@@ -12,6 +13,9 @@ class App extends Component {
           <Header />
           <Card />
         </section>
+        <div className='map'>
+          <Map/>
+        </div>
       </div>
     );
   }
