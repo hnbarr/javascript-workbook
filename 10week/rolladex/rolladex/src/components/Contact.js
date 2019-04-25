@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Card from './Card'
 
 export default class Contact extends Component {
   constructor(props) {
@@ -17,7 +18,8 @@ export default class Contact extends Component {
         // console.log(data.results)
         this.setState({
           contacts: data,
-          isLoaded: true
+          isLoaded: true,
+          
         })
         // console.log(this.state.contacts)
       })
@@ -34,8 +36,12 @@ export default class Contact extends Component {
         return (
         <div>
             <ul>
-                {this.state.contacts.results.map((contact)=>{
-                    return <li key={contact.email}>{contact.name.first}</li>
+                {this.state.contacts.results.map((contact, i)=>{
+                    return (
+                      <div key={i}>
+                        <Card contact={contact} />
+                      </div>
+                    )
                 })}  
             </ul>
         </div>
