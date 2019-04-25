@@ -35,6 +35,3 @@ export default class Header extends Component {
   }
 }
 
-
-// latlng=30.2729,-97.7443
-
