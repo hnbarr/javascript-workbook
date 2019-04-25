@@ -10,7 +10,7 @@ function App() {
           hello world
         </p>
         <Contact />
-       
+       <p> wassup</p>
       </header>
     </div>
   );
