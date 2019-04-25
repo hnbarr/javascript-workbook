@@ -66,14 +66,14 @@
 .results h5{
   /* border-bottom: 1px solid #F9F9F9; */
   border-bottom: 2px solid rgb(55, 60, 72);
-  padding: 20px;
+  padding: 10px;
 
 }
 
-#reviews, #describe, #comment{
-  border-bottom: 1px solid rgb(55, 60, 72);
-  padding: 3px;
+#describe, #comment{
   font-size: 13px;
+  border-bottom: 1px solid rgb(55, 60, 72);
+
 }
 
 #top {
@@ -92,4 +92,8 @@
 .map {
   width: 1200px;
   height: 900px;
+}
+
+#comment {
+  padding-bottom: 20px;
 }

@@ -5,9 +5,9 @@ export default class Review extends Component {
     super(props)
   
     this.state = {
-       title: 'lots of leaves',
-       comment: 'I went there on a saturday and there were so many leaves, I lost my dog in some.',
-       stars: 4.6
+       title: this.props.title,
+       comment: this.props.comment,
+       stars: this.props.stars
     }
   }
   

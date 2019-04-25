@@ -10,7 +10,7 @@ export default class Results extends Component {
        name: '',
        reviews: [ //test, api will replace this 
         {title: 'great place', comment: 'blah blah blah blah blah blah ablah', stars: 5.0}, 
-        {title: 'lots of shade!', comment: 'blah blah blah blah blah blah ablah', stars:4.7}, 
+        {title: 'lots of leaves', comment: 'I went there on a saturday and there were so many leaves, I lost my dog in some.', stars:4.7}, 
         {title: 'need more benches', comment: 'blah blah blah blah blah blah ablah', stars: 3.6}
      ],
        isExpanded: true
@@ -41,7 +41,7 @@ export default class Results extends Component {
               <Description />
               {reviews.map((review, i)=> {
                   return(
-                    <Review key={i} review={review}/>
+                    <Review key={i} review={review} title={review.title} comment={review.comment} stars={review.stars}/>
                   )
               })}
         </div>
