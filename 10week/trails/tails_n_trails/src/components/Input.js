@@ -17,8 +17,6 @@ export default class Input extends Component {
 
 
   handleSubmit = () => {
-    //search api for zip code and then clear field
-    //use this.state.currentZip for api search!
     this.setState({
       currentZip: this.state.inputVal, //moved the zip that was entered, into its own state.
       inputVal: ' '

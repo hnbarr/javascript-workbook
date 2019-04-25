@@ -11,18 +11,13 @@ export default class Map extends Component {
     zoom: 13
   };
 
-  //do I need to find a converter to get zip code to give lat/lon?
-  //actually..... just do a current location to get the person's current location.
-  //take away input field and just go a discover button 
-  //button to start the fetch for current geolocation.
-
   render() {
     const {center, zoom} = this.props;
     return (
       <div style={{ height: '100vh', width: '100%' }}>
         <div className='map' >
           <GoogleMapReact
-            bootstrapURLKeys={{ key:'AIzaSyAEcFySpszeFSqAqTsVRazHjiOgEk_WZgs'}}
+            bootstrapURLKeys={{ key:'AIzaSyDeQEACzs9eaPfC6oPU-d6BHYlPr_D1gDY'}}
             defaultCenter={center}
             defaultZoom={zoom}
           >
@@ -33,7 +28,9 @@ export default class Map extends Component {
   }
 }
 
-// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=
+// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=park&keyword=dog&key=
 
-// https://www.google.com/maps/search/dog+trails+near+me/@30.4231306,-97.7190639,13z/data=!3m1!4b1
-// above is the the search I want to go after each submit, with updated lat & long, updated zoom and idk what data is?
+//next steps here:
+// https://github.com/google-map-react/google-map-react/blob/master/API.md
+
+// AIzaSyDeQEACzs9eaPfC6oPU-d6BHYlPr_D1gDY
