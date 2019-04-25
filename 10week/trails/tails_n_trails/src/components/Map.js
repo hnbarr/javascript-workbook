@@ -1,10 +1,10 @@
-
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
 export default class Map extends Component {
   static defaultProps = {
     center: {
+      //always start in austin
       lat: 30.2729,
       lng: -97.7443,
     },
@@ -12,6 +12,9 @@ export default class Map extends Component {
   };
 
   //do I need to find a converter to get zip code to give lat/lon?
+  //actually..... just do a current location to get the person's current location.
+  //take away input field and just go a discover button 
+  //button to start the fetch for current geolocation.
 
   render() {
     const {center, zoom} = this.props;

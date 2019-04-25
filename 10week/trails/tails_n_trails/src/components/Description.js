@@ -5,7 +5,7 @@ export default class Description extends Component {
       super(props)
     
       this.state = {
-         text: 'small detailed section for park!' //api will get this per location
+         text: this.props.description
       }
     }
     
