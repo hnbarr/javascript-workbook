@@ -1,0 +1,36 @@
+.container {
+  text-align: center;
+}
+
+body {
+  background-image: url(./img/full-bloom.png)
+}
+
+.card {
+  margin:  0 auto;
+  background-color: #EBEBEB !important;
+  width: 50%;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.bioPic {
+  padding: 15px;
+  margin: 0 auto;
+  width: 250px !important;
+  height: 250px !important;
+  border-radius: 50% !important;
+}
+
+.top {
+  padding: 15px;
+  color: rgb(22, 35, 35);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
