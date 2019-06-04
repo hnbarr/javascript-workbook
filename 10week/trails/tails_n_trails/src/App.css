@@ -1,0 +1,109 @@
+.App {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  background-image: url(./topography.png);
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.panel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  /* border-radius: 8px; */
+  background-color: #282c34;
+  min-width: 400px;
+  min-height: 25vh;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+h1 {
+  color: #F9F9F9;
+  padding-top: 30px;
+}
+
+#zipField {
+  padding:7px; 
+  width: 150px;
+  border-radius: 5px;
+  outline: none;
+  margin: 5px;
+  background-color: #F9F9F9;
+}
+#submitBtn {
+  background-color: transparent;
+  color: #F9F9F9;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  width: 80px;
+  outline: none;
+  margin: 5px;
+}
+
+#submitBtn:hover{
+  background-color: rgb(55, 60, 72);
+}
+
+
+/* card stuff! */
+.card{
+  border: 1px solid #F9F9F9;
+  border-radius: 8px;
+  margin-top: 50px;
+  width: 80%;
+  padding: 5px;
+}
+
+.card p {
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+
+.card h5{
+  /* border-bottom: 1px solid #F9F9F9; */
+  border-bottom: 2px solid rgb(55, 60, 72);
+  padding: 10px;
+}
+
+.card b {
+  padding: 10px;
+}
+
+#describe, #comment{
+  font-size: 13px;
+  border-bottom: 1px solid rgb(55, 60, 72);
+
+}
+
+#top {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 5px;
+
+}
+
+#bottom {
+  display: block;
+  padding: 5px;
+}
+
+.map {
+  width: 1200px;
+  height: 900px;
+}
+
+#comment {
+  padding-bottom: 20px;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
