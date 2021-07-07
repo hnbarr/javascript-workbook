@@ -2,24 +2,58 @@
 
 const assert = require('assert');
 
-function forEach(arr, callback) {
-  // Your code here
+//Create a forEach() function that takes an array of items and a function that runs the function arr.length number of times.
+const forEach = (arr, callback)=>{
+  for(let i = 0; i < arr.length; i++){
+  const item = arr[i];
+  if(callback){
+    // console.log("callback present", item)
+    callback(item)
+    }
+  }
 }
 
-function map(arr, callback) {
-  // Your code here
+//Create a map() function that takes an array of items and a function that returns an array with each item manipulated by that function.
+const map = (arr, callback) => {
+  let squareArr = []
+  for(let i = 0; i < arr.length; i++){
+    let square = arr[i]*arr[i]
+    // console.log(square)
+    squareArr.push(square)
+  }
+  return squareArr
 }
 
-function filter(arr, callback) {
-  // Your code here
+//Create a filter() function that takes an array of items and a function that returns an array with only the items that return true in the function.
+const filter = (arr, callback) => {
+  let even = []
+    for(let i = 1; i < arr.length; i++){
+      if(i % 2 === 0){
+      even.push(i)
+      // console.log(even)
+    }
+  }
+  return even
 }
 
-function some(arr, callback) {
-  // Your code here
+//Create a some() function that takes an array of items and a function that returns true or false if any of the items return true in the function.
+const some = (arr, callback) => {
+  for(let i = 0; i < arr.length; i++){
+    if(callback(arr[i], i, arr)){
+      return true
+    }
+  }
+  return false
 }
 
-function every(arr, callback) {
-  // Your code here
+//Create an every() function that takes an array of items and a function that returns true or false if all of the items return true in the function.
+const every  = (arr, callback) => {
+  for(let i = 0; i < arr.length; i++){
+    if(!callback(arr[i], i, arr)){
+      return false
+    }
+  }
+  return true
 }
 
 if (typeof describe === 'function') {
